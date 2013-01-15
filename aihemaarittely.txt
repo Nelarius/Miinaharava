@@ -1,0 +1,24 @@
+
+--------------------------------------------------------------
+
+Aihe: Miinaharava
+
+Toteutetaan klooni klassisesta miinaharava - pelistä. 
+
+Pelissä pelaajan täytyy paljastaa ruutuja, jotka eivät sisällä miinoja. Klikkaamalla paljastamatonta ruutua jonka naapurissa ei ole miinaa, peli paljastaa kaikki ruudut joiden naapurissa ei myöskään ole miinaa. Paljastettujen ruutujen vieressä on naapurissa olevien miinojen lukumäärä. Paljastamattomat ruudut voi merkitä lipulla jos pelaaja epäilee, että siellä on miina. Peli on voitettu kun kaikki miinat on merkitty lipulla.
+
+Klassisen moodin lisäksi pelissä on myös survival-moodi, jossa haravoitava kenttä vierii jatkuvasti ylöspäin.
+
+--------------------------------------------------------------
+
+Käyttäjät: pelaaja
+
+--------------------------------------------------------------
+
+Pelaajan toiminnot:
+
+-pelimoodin valitseminen
+-vaikeustason valitseminen
+-poistuminen
+
+--------------------------------------------------------------
