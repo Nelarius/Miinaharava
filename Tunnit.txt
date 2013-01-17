@@ -9,8 +9,8 @@ Suunnittelu - 1 tuntia
 
 17.1.2013
 --------------------------------------------------------------
-Suunnittelu - 0.5 tuntia
+Suunnittelu - 1.5 tuntia
 	kohteena pelimoottoritoiminnallisuuden luokkarakenteen hahmottaminen
 
-Toteutus - 2 tuntia
-	kohteena oli ohjelman yksinkertaisen rakenteen toteutus ja ikkunointikirjastojen uudelleenk‰‰nt‰mist‰ eri k‰‰nt‰j‰ll‰.
+Toteutus - 3.5 tuntia
+	kohteena oli pelimoottoritoiminnallisuuden toteutus ja ikkunointikirjastojen uudelleenk‰‰nt‰mist‰ eri k‰‰nt‰j‰ll‰.

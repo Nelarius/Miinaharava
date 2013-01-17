@@ -31,10 +31,25 @@ void App::execute()
 
 void App::onLoop()
 {
-    //
+    _entityManager->onLoop();
 }
 
 void App::onRender()
 {
-    //
+    _entityManager->onRender(_mainWindow);
+}
+
+sf::RenderWindow& App::getWindow() const
+{
+    return _mainWindow;
+}
+
+TextureManager& App::getTextureManager() const
+{
+    return _textureManager;
+}
+
+EntityManager& App::getEntityManager() const
+{
+    return _entityManager;
 }

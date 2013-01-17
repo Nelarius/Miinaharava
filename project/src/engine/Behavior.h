@@ -1,0 +1,14 @@
+#ifndef BEHAVIOR_H
+#define BEHAVIOR_H
+
+
+class Behavior
+{
+    public:
+        Behavior();
+        virtual ~Behavior();
+
+        virtual void update() = 0;
+};
+
+#endif // BEHAVIOR_H
