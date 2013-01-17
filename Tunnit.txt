@@ -1,3 +1,8 @@
 15.1.2013
 --------------------------------------------------------------
 Määrittely - 0.3 tuntia
+
+16.1.2013
+--------------------------------------------------------------
+Suunnittelu - 1 tuntia
+	kohteena oli yksikkötestauksen projekti-/kansiorakenteen pohdiskelua ja yksikkötestauskirjaston kääntämistä.
