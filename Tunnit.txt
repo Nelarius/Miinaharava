@@ -6,3 +6,11 @@ Määrittely - 0.3 tuntia
 --------------------------------------------------------------
 Suunnittelu - 1 tuntia
 	kohteena oli yksikkötestauksen projekti-/kansiorakenteen pohdiskelua ja yksikkötestauskirjaston kääntämistä.
+
+17.1.2013
+--------------------------------------------------------------
+Suunnittelu - 0.5 tuntia
+	kohteena pelimoottoritoiminnallisuuden luokkarakenteen hahmottaminen
+
+Toteutus - 2 tuntia
+	kohteena oli ohjelman yksinkertaisen rakenteen toteutus ja ikkunointikirjastojen uudelleenkääntämistä eri kääntäjällä.

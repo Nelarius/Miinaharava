@@ -12,6 +12,8 @@ class App
     public:
         static App* getInstance();
         void execute();
+        void onLoop();
+        void onRender();
 
     private:
         App();

@@ -6,9 +6,15 @@ class AppState
 {
     public:
         AppState();
-        ~AppState();
-    protected:
-    private:
+        virtual ~AppState();
+
+        virtual void activate() = 0;
+        virtual void deactivate() = 0;
+
+        enum
+        {
+            //
+        };
 };
 
 #endif // APPSTATE_H

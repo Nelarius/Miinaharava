@@ -1,13 +1,9 @@
-#include "SFML/System.hpp"
+#include "engine/App.h"
 
 int main()
 {
-    sf::Clock Clock;
-    while (Clock.getElapsedTime() < 5.f)
-    {
-        std::cout << Clock.getElapsedTime() << std::endl;
-        sf::Sleep(0.5f);
-    }
+    App* app = App::getInstance();
+    app->execute();
 
     return 0;
 }
