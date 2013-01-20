@@ -13,7 +13,7 @@ Drawable::~Drawable()
 
 void Drawable::load(const std::string file)
 {
-    sf::Texture* texture = App::getTextureManager();
+    sf::Texture* texture = App::getInstance()->getTextureManager().getTexture(file);
     _sprite.setTexture(*texture);
     _isLoaded = true;
 }
@@ -36,12 +36,12 @@ sf::Vector2f Drawable::getPosition() const
     return sf::Vector2f();
 }
 
-void Drawable::setPosition(float x, foat y)
+void Drawable::setPosition(float x, float y)
 {
     _sprite.setPosition(x, y);
 }
 
-bool Entity::isLoaded() const
+bool Drawable::isLoaded() const
 {
     return _isLoaded;
 }

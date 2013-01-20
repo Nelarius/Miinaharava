@@ -1,4 +1,5 @@
 #include "engine/App.h"
+#include "engine/AppState.h"
 
 App::App()
 {
@@ -11,45 +12,55 @@ App* App::getInstance()
     return &app;
 }
 
+void App::initialize()
+{
+    _mainWindow.create(sf::VideoMode(800, 600, 32), "Minesweeper", sf::Style::None);
+    _mainWindow.resetGLStates();
+    _mainWindow.setFramerateLimit(60);
+
+    _appStateManager.setActiveAppState(AppState::SplashScreen);
+}
+
 void App::execute()
 {
-    _mainWindow.create(sf::VideoMode(800, 600, 32), "Minesweeper", sf::Style::Resize || sf::Style::Close);
-
-    _mainWindow.resetGLStates();
+    initialize();
 
     while(_mainWindow.isOpen())
     {
-        sf::Event event;
-        while (_mainWindow.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                _mainWindow.close();
-        }
-        sf::sleep(sf::milliseconds(50));
+        onLoop();
+
+        onRender();
     }
 }
 
 void App::onLoop()
 {
-    _entityManager->onLoop();
+    _entityManager.onLoop();
 }
 
 void App::onRender()
 {
-    _entityManager->onRender(_mainWindow);
+    _entityManager.onRender(_mainWindow);
+
+    _mainWindow.display();
 }
 
-sf::RenderWindow& App::getWindow() const
+sf::RenderWindow& App::getWindow()
 {
     return _mainWindow;
 }
 
-TextureManager& App::getTextureManager() const
+TextureManager& App::getTextureManager()
 {
     return _textureManager;
 }
 
-EntityManager& App::getEntityManager() const
+EntityManager& App::getEntityManager()
 {
     return _entityManager;
+}
+
+AppStateManager& App::getAppStateManager()
+{
+    return _appStateManager;
 }

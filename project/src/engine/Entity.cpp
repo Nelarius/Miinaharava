@@ -12,10 +12,10 @@ Entity::~Entity()
 
 Behavior* Entity::getBehavior() const
 {
-    return &_entityBehavior;
+    return _entityBehavior;
 }
 
-Behavior* Entity::getDrawable() const
+Drawable* Entity::getDrawable() const
 {
-    return &_entityDrawable;
+    return _entityDrawable;
 }

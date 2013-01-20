@@ -14,3 +14,8 @@ Suunnittelu - 1.5 tuntia
 
 Toteutus - 3.5 tuntia
 	kohteena oli pelimoottoritoiminnallisuuden toteutus ja ikkunointikirjastojen uudelleenk‰‰nt‰mist‰ eri k‰‰nt‰j‰ll‰.
+
+20.1.2013
+--------------------------------------------------------------
+Toteutus - 2 tuntia
+	ensimm‰isten peliluokkien toteutusta ja bugien korjausta

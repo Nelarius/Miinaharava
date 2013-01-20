@@ -15,11 +15,11 @@ class TextureManager
         sf::Texture* getTexture(const std::string file);
 
     private:
-        std::map<const std::string, sf::Texture> _textures;
+        std::map<const std::string, sf::Texture*> _textures;
 
         struct TextureDeallocator
         {
-            void operator()(const std::pair<const std::string, sf::Texture>& p)
+            void operator()(const std::pair<const std::string, sf::Texture*>& p)
             {
                 delete p.second;
             }

@@ -21,13 +21,13 @@ sf::Texture* TextureManager::getTexture(const std::string file)
     }
     else
     {
-        sf::Texture* texture = new Texture();
-        if (texture->LoadFromFile(file))
+        sf::Texture* texture = new sf::Texture();
+        if (texture->loadFromFile(file))
         {
-            _textures.insert(std::pair<const std::string, sf::Texture*>(name, texture));
+            _textures.insert(std::pair<const std::string, sf::Texture*>(file, texture));
         }
 
-        return image;
+        return texture;
     }
 
 }

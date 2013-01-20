@@ -1,6 +1,8 @@
 #include "engine/EntityManager.h"
+#include "Drawable.h"
 
 #include <algorithm>
+#include <iostream>
 
 EntityManager::EntityManager()
 {
@@ -15,6 +17,7 @@ EntityManager::~EntityManager()
 void EntityManager::add(const int ident, Entity* entity)
 {
     _gameObjects.insert(std::pair<const int, Entity*>(ident, entity));
+    //std::cout << "gameobject with ident " << ident << " added." << std::endl;
 }
 
 void EntityManager::remove(const int ident)
@@ -25,6 +28,8 @@ void EntityManager::remove(const int ident)
     {
         delete it->second;
         _gameObjects.erase(it);
+
+        //std::cout << "gameobject with ident " << ident << " removed." << std::endl;
     }
 }
 

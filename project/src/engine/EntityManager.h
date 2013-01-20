@@ -5,6 +5,10 @@
 #include "engine/Entity.h"
 #include <map>
 #include <utility>
+#include "Behavior.h"
+
+
+//TO-DO: add a safeguard against adding an entity with the same ident and overriding the previous pointer.
 
 class EntityManager
 {
@@ -34,7 +38,7 @@ class EntityManager
 
         struct EntityUpdate
         {
-            void operator()(cont std::pair<const int, Entity*> p)
+            void operator()(const std::pair<const int, Entity*> p)
             {
                 Behavior* behavior = p.second->getBehavior();   //get behavior pointer
                 //if the entity has a behavior component, then execute it

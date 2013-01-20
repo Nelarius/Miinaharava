@@ -1,5 +1,6 @@
-#include "AppStateSplashScreen.h"
-#include "App.h"    //for window reference
+#include "game/AppStateSplashScreen.h"
+#include "game/SplashScreenEntity.h"
+#include "engine/App.h"    //for window reference
 
 AppStateSplashScreen::AppStateSplashScreen()
 {
@@ -13,10 +14,10 @@ AppStateSplashScreen::~AppStateSplashScreen()
 
 void AppStateSplashScreen::activate()
 {
-    App::getInstance()->getWindow().clear(sf::Color(0,0,0,255));
+    App::getInstance()->getEntityManager().add(1, new SplashScreenEntity());
 }
 
 void AppStateSplashScreen::deactivate()
 {
-    //
+    App::getInstance()->getEntityManager().remove(1);
 }

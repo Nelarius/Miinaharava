@@ -1,7 +1,9 @@
 #ifndef APPSTATEMANAGER_H
 #define APPSTATEMANAGER_H
 
-#include "AppState.h"   //mandatory for derived classes...
+#include "engine/AppState.h"   //mandatory for derived classes...
+#include "game/AppStateSplashScreen.h"
+#include "game/AppStateMenu.h"
 
 class AppStateManager
 {
@@ -13,6 +15,9 @@ class AppStateManager
 
     private:
         AppState* _activeAppState;
+
+        AppStateSplashScreen   _splashScreen;
+        AppStateMenu           _menu;
 };
 
 #endif // APPSTATEMANAGER_H

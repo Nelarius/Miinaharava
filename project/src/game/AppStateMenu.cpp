@@ -1,5 +1,6 @@
 #include "AppStateMenu.h"
-#include "App.h"    //for window reference
+#include "engine/App.h"    //for window reference
+#include "game/GridEntity.h"
 
 AppStateMenu::AppStateMenu()
 {
@@ -13,10 +14,10 @@ AppStateMenu::~AppStateMenu()
 
 void AppStateMenu::activate()
 {
-    App::getInstance()->getWindow().clear(sf::Color(255,255,255,255));
+    App::getInstance()->getEntityManager().add(2, new GridEntity());
 }
 
 void AppStateMenu::deactivate()
 {
-    //
+    App::getInstance()->getEntityManager().remove(2);
 }

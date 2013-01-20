@@ -13,7 +13,8 @@ class AppState
 
         enum
         {
-            //
+            SplashScreen,
+            Menu
         };
 };
 
