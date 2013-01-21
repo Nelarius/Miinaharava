@@ -19,5 +19,5 @@ void AppStateMenu::activate()
 
 void AppStateMenu::deactivate()
 {
-    App::getInstance()->getEntityManager().remove(2);
+    App::getInstance()->getEntityManager().removeAll();
 }

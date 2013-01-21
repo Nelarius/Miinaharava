@@ -7,11 +7,11 @@ class AppStateMenu : public AppState
 {
     public:
         AppStateMenu();
-        virtual ~AppStateMenu();
+        ~AppStateMenu();
 
         void activate();
         void deactivate();
-    protected:
+
     private:
 };
 

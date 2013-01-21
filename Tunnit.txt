@@ -19,3 +19,8 @@ Toteutus - 3.5 tuntia
 --------------------------------------------------------------
 Toteutus - 2 tuntia
 	ensimmäisten peliluokkien toteutusta ja bugien korjausta
+
+21.1.2013
+--------------------------------------------------------------
+Testausta - 4 tuntia
+	segfaulttien jahtaamista ja testien kirjoittamista

@@ -7,30 +7,31 @@
 #include <utility>
 #include "Behavior.h"
 
-
-//TO-DO: add a safeguard against adding an entity with the same ident and overriding the previous pointer.
-
 class EntityManager
 {
     public:
         EntityManager();
         ~EntityManager();
 
-        void add(const int ident, Entity* entity);
-        void remove(const int ident);
+        bool add(const unsigned int ident, Entity* entity);
+        void remove(const unsigned int ident);
+        void removeAll();
 
-        Entity* getEntity(const int ident) const;
+        Entity* getEntity(const unsigned int ident) const;
+
+        unsigned int getHighestAvailableIdent() const;
 
         void onLoop();
         void onRender(sf::RenderWindow&);
 
     private:
-        std::map<const int, Entity*> _gameObjects;
+        std::map<const unsigned int, Entity*> _gameObjects;
+        unsigned int _highestIdAvail;
 
         ///functors for the for_each loops in the source
         struct EntityDeallocator
         {
-            void operator()(const std::pair<const int, Entity*>& p) const
+            void operator()(const std::pair<const unsigned int, Entity*>& p) const
             {
                 delete p.second;
             }
@@ -38,7 +39,7 @@ class EntityManager
 
         struct EntityUpdate
         {
-            void operator()(const std::pair<const int, Entity*> p)
+            void operator()(const std::pair<const unsigned int, Entity*> p)
             {
                 Behavior* behavior = p.second->getBehavior();   //get behavior pointer
                 //if the entity has a behavior component, then execute it

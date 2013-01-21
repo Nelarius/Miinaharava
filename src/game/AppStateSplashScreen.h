@@ -11,7 +11,7 @@ class AppStateSplashScreen : public AppState
 
         void activate();
         void deactivate();
-    protected:
+
     private:
 };
 

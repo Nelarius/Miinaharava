@@ -16,6 +16,7 @@ SplashScreenBehavior::~SplashScreenBehavior()
 void SplashScreenBehavior::update()
 {
     App::getInstance()->getWindow().clear(sf::Color(204,204,204,255));
+
     sf::Event event;
     while (App::getInstance()->getWindow().pollEvent(event))
     {

@@ -31,7 +31,6 @@ class App
         TextureManager _textureManager;
         EntityManager _entityManager;
         AppStateManager _appStateManager;
-
 };
 
 #endif // APP_H
