@@ -2,7 +2,6 @@
 #include "Drawable.h"
 
 #include <algorithm>
-#include <iostream>
 
 EntityManager::EntityManager() : _highestIdAvail(0)
 {
@@ -20,6 +19,8 @@ bool EntityManager::add(const unsigned int ident, Entity* entity)
     {
         _gameObjects.insert(std::pair<const int, Entity*>(ident, entity));
         _highestIdAvail = ident + 1u;
+
+        std::cout << "added entity with ident " << ident << std::endl;
 
         return true;
     }

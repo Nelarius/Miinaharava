@@ -7,6 +7,8 @@
 #include <utility>
 #include "Behavior.h"
 
+#include <iostream>
+
 class EntityManager
 {
     public:
@@ -33,13 +35,14 @@ class EntityManager
         {
             void operator()(const std::pair<const unsigned int, Entity*>& p) const
             {
+                std::cout << "removing entity with ident " << p.first << std::endl;
                 delete p.second;
             }
         };
 
         struct EntityUpdate
         {
-            void operator()(const std::pair<const unsigned int, Entity*> p)
+            void operator()(const std::pair<const unsigned int, Entity*>& p)
             {
                 Behavior* behavior = p.second->getBehavior();   //get behavior pointer
                 //if the entity has a behavior component, then execute it

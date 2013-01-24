@@ -24,3 +24,9 @@ Toteutus - 2 tuntia
 --------------------------------------------------------------
 Testausta - 4 tuntia
 	segfaulttien jahtaamista ja testien kirjoittamista
+
+Dokumentointi 0.5 tuntia
+	luokkakaavioiden valmistelua pelimoottorista
+
+Toteutusta 0.5 tuntia
+	pelimoottorin rakenteen hienosäätöä

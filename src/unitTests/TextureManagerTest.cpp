@@ -1,11 +1,22 @@
 #include "UnitTest++.h"
 #include "engine/TextureManager.h"
 
+struct TextureFixture
+{
+    TextureManager manager;
+    TextureFixture()    {}
+    ~TextureFixture()   {}
+};
+
 SUITE(TextureManagerTest)
 {
-    TEST(LoadingTextureReturnsNonNullPointer)
+    TEST_FIXTURE(TextureFixture, LoadingTextureReturnsNonNullPointer)
     {
-        TextureManager manager;
         CHECK(bool (manager.getTexture("textures/test_tile.png")));
+    }
+
+    TEST_FIXTURE(TextureFixture, LoadingIncorrectTextureReturnsNullPointer)
+    {
+        CHECK(!bool (manager.getTexture("asdfasdf.png")));
     }
 }

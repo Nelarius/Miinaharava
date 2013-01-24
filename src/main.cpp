@@ -5,13 +5,14 @@
 
 int main(int argc, char** argv)
 {
+    #ifdef DEBUG
     //before running the app, run the tests:
-    int result = UnitTest::RunAllTests();
-
+    UnitTest::RunAllTests();
     std::cout << std::endl;
+    #endif // DEBUG
 
     App* app = App::getInstance();
     app->execute();
 
-    return result;
+    return 0;
 }

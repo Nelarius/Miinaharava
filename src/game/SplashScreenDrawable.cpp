@@ -9,3 +9,8 @@ SplashScreenDrawable::~SplashScreenDrawable()
 {
     //dtor
 }
+
+void SplashScreenDrawable::draw(sf::RenderWindow& window)
+{
+    //
+}

@@ -14,7 +14,7 @@ AppStateMenu::~AppStateMenu()
 
 void AppStateMenu::activate()
 {
-    App::getInstance()->getEntityManager().add(2, new GridEntity());
+    App::getInstance()->getEntityManager().add(2u, new GridEntity());
 }
 
 void AppStateMenu::deactivate()

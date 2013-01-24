@@ -14,7 +14,7 @@ AppStateSplashScreen::~AppStateSplashScreen()
 
 void AppStateSplashScreen::activate()
 {
-    App::getInstance()->getEntityManager().add(1, new SplashScreenEntity());
+    App::getInstance()->getEntityManager().add(1u, new SplashScreenEntity());
 }
 
 void AppStateSplashScreen::deactivate()

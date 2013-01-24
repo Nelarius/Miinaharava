@@ -25,9 +25,9 @@ sf::Texture* TextureManager::getTexture(const std::string file)
         if (texture->loadFromFile(file))
         {
             _textures.insert(std::pair<const std::string, sf::Texture*>(file, texture));
+            return texture;
         }
-
-        return texture;
     }
 
+    return 0;
 }
