@@ -16,7 +16,8 @@ class Drawable
         Drawable();
         virtual ~Drawable();
 
-        virtual void draw(sf::RenderWindow&);
+        virtual void setPosition(float, float);
+        virtual void draw(sf::RenderWindow&) = 0;
 };
 
 #endif // DRAWABLE_H

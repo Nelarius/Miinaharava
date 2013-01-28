@@ -1,10 +1,11 @@
 #include "game/SplashScreenEntity.h"
 #include "game/SplashScreenBehavior.h"
+#include <game/SplashScreenDrawable.h>
 
 SplashScreenEntity::SplashScreenEntity()
 {
     _entityBehavior = new SplashScreenBehavior();
-    _entityDrawable = 0;
+    _entityDrawable = new SplashScreenDrawable();
 }
 
 SplashScreenEntity::~SplashScreenEntity()

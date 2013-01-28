@@ -45,3 +45,8 @@ bool DrawableSprite::isLoaded() const
 {
     return _isLoaded;
 }
+
+sf::Sprite& DrawableSprite::getSprite()
+{
+    return _sprite;
+}

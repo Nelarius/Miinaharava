@@ -10,7 +10,7 @@ Drawable::~Drawable()
     //dtor
 }
 
-void Drawable::draw(sf::RenderWindow& window)
+void Drawable::setPosition(float x, float y)
 {
     //
 }

@@ -14,7 +14,8 @@ class AppState
         enum
         {
             SplashScreen,
-            Menu
+            Menu,
+            Classic
         };
 };
 

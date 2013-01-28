@@ -20,7 +20,7 @@ class DrawableSprite : public Drawable
         virtual bool isLoaded() const;
 
     protected:
-        sf::Sprite& getSprite() const;
+        sf::Sprite& getSprite();
         bool _isLoaded;
 
     private:

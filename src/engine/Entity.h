@@ -1,8 +1,8 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-class Behavior;
-class Drawable;
+#include <engine/Behavior.h>
+#include <engine/Drawable.h>
 
 /// \brief A type of container for game components.
 ///

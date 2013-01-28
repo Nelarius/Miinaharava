@@ -1,6 +1,7 @@
 #include "AppStateMenu.h"
 #include "engine/App.h"    //for window reference
-#include "game/GridEntity.h"
+#include "game/MenuStateEntity.h"
+#include <iostream>
 
 AppStateMenu::AppStateMenu()
 {
@@ -14,7 +15,10 @@ AppStateMenu::~AppStateMenu()
 
 void AppStateMenu::activate()
 {
-    App::getInstance()->getEntityManager().add(2u, new GridEntity());
+    if (!App::getInstance()->getEntityManager().add(2u, new MenuStateEntity()))
+    {
+        std::cout << "entity not added" << std::endl;
+    }
 }
 
 void AppStateMenu::deactivate()

@@ -4,6 +4,7 @@
 #include "engine/AppState.h"   //mandatory for derived classes...
 #include "game/AppStateSplashScreen.h"
 #include "game/AppStateMenu.h"
+#include <game/AppStateClassic.h>
 
 class AppStateManager
 {
@@ -18,6 +19,7 @@ class AppStateManager
 
         AppStateSplashScreen   _splashScreen;
         AppStateMenu           _menu;
+        AppStateClassic        _classic;
 };
 
 #endif // APPSTATEMANAGER_H

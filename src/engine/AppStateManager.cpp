@@ -26,5 +26,9 @@ void AppStateManager::setActiveAppState(int id)
         case AppState::Menu          :   _activeAppState = &_menu;
                                          _activeAppState->activate();
                                          break;
+
+        case AppState::Classic       :  _activeAppState = &_classic;
+                                        _activeAppState->activate();
+                                        break;
     }
 }

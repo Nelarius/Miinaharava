@@ -30,3 +30,9 @@ Dokumentointi 0.5 tuntia
 
 Toteutusta 0.5 tuntia
 	pelimoottorin rakenteen hienosäätöä
+
+27.1.2013
+--------------------------------------------------------------
+Suunnittelua - 1 tunti
+
+Toteutus - 3 tuntia

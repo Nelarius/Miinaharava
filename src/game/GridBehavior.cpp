@@ -3,9 +3,14 @@
 #include "engine/stdincl.h"
 #include "engine/AppState.h"
 
-GridBehavior::GridBehavior()
+#include <game/TileEntity.h>
+
+GridBehavior::GridBehavior() : _score(0)
 {
-    //ctor
+    unsigned int highest = App::getInstance()->getEntityManager().getHighestAvailableIdent();
+    TileEntity* tile = new TileEntity();
+    tile->getDrawable()->setPosition(0.0, 0.0);
+    App::getInstance()->getEntityManager().add(highest, tile);
 }
 
 GridBehavior::~GridBehavior()
@@ -30,4 +35,14 @@ void GridBehavior::update()
             App::getInstance()->getWindow().close();
         }
     }
+}
+
+unsigned int GridBehavior::getIndex(int x, int y)
+{
+    return 0u;
+}
+
+bool GridBehavior::cascade(unsigned int index)
+{
+    return false;
 }

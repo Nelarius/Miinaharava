@@ -1,6 +1,7 @@
 #include "game/AppStateSplashScreen.h"
 #include "game/SplashScreenEntity.h"
 #include "engine/App.h"    //for window reference
+#include <iostream>
 
 AppStateSplashScreen::AppStateSplashScreen()
 {
@@ -14,11 +15,11 @@ AppStateSplashScreen::~AppStateSplashScreen()
 
 void AppStateSplashScreen::activate()
 {
-    App::getInstance()->getEntityManager().add(1u, new SplashScreenEntity());
+    unsigned int highest = App::getInstance()->getEntityManager().getHighestAvailableIdent();
+    App::getInstance()->getEntityManager().add(highest, new SplashScreenEntity());
 }
 
 void AppStateSplashScreen::deactivate()
 {
-
     App::getInstance()->getEntityManager().removeAll();
 }

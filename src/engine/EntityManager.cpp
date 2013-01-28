@@ -15,12 +15,17 @@ EntityManager::~EntityManager()
 
 bool EntityManager::add(const unsigned int ident, Entity* entity)
 {
+    #ifdef DEBUG
+    std::cout << "current highest available ident: " << getHighestAvailableIdent() << std::endl;
+    #endif // DEBUG
     if (ident >= _highestIdAvail)
     {
-        _gameObjects.insert(std::pair<const int, Entity*>(ident, entity));
+        _gameObjects.insert(std::pair<const unsigned int, Entity*>(ident, entity));
         _highestIdAvail = ident + 1u;
 
+        #ifdef DEBUG
         std::cout << "added entity with ident " << ident << std::endl;
+        #endif //DEBUG
 
         return true;
     }

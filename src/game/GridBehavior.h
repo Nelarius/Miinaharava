@@ -10,6 +10,14 @@ class GridBehavior : public Behavior
         ~GridBehavior();
 
         void update();
+
+    private:
+        //methods
+        unsigned int getIndex(int x, int y);
+        bool cascade(unsigned int index);
+
+        //attributes:
+        int _score;
 };
 
 #endif // GRIDBEHAVIOR_H

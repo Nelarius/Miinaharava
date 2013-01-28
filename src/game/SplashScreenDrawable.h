@@ -2,11 +2,7 @@
 #define SPLASHSCREENDRAWABLE_H
 
 #include "engine/Drawable.h"
-
-namespace sf
-{
-    class RenderWindow;
-}
+#include <engine/stdincl.h>
 
 
 class SplashScreenDrawable : public Drawable
@@ -15,9 +11,10 @@ class SplashScreenDrawable : public Drawable
         SplashScreenDrawable();
         ~SplashScreenDrawable();
 
-        void draw(sf::RenderWindow&);
+        virtual void draw(sf::RenderWindow&);
 
     private:
+        sf::Text _text;
 };
 
 #endif // SPLASHSCREENDRAWABLE_H
