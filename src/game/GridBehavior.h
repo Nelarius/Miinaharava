@@ -14,10 +14,15 @@ class GridBehavior : public Behavior
     private:
         //methods
         unsigned int getIndex(int x, int y);
+        float getX(unsigned int index);
+        float getY(unsigned int index);
+
         bool cascade(unsigned int index);
+        void placeMines();
 
         //attributes:
         int _score;
+        bool _firstClick;
 };
 
 #endif // GRIDBEHAVIOR_H

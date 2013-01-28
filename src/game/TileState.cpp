@@ -1,6 +1,7 @@
 #include "TileState.h"
+#include <game/TileStateManager.h>
 
-TileState::TileState()
+TileState::TileState(TileStateManager* owner) : _owner(owner)
 {
     //ctor
 }

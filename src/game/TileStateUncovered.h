@@ -3,13 +3,17 @@
 
 #include <game/TileState.h>
 
+class TileStateManager;
 
 class TileStateUncovered : public TileState
 {
     public:
-        TileStateUncovered();
+        TileStateUncovered(TileStateManager*);
         ~TileStateUncovered();
-    protected:
+
+        bool leftClick(TileDrawableSprite*);
+        bool rightClick(TileDrawableSprite*);
+
     private:
 };
 

@@ -1,7 +1,7 @@
 #ifndef SPLASHSCREENBEHAVIOR_H
 #define SPLASHSCREENBEHAVIOR_H
 
-#include "engine/Behavior.h"
+#include <engine/Behavior.h>
 
 class SplashScreenBehavior : public Behavior
 {

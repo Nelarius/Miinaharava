@@ -36,3 +36,11 @@ Toteutusta 0.5 tuntia
 Suunnittelua - 1 tunti
 
 Toteutus - 3 tuntia
+
+28.1.2013
+--------------------------------------------------------------
+Pään hakkaamista seinään - 2 tuntia
+	segfaulttien tuomaa murhetta
+
+Toteutusta - 2 tuntia
+

@@ -10,7 +10,7 @@ class MenuBehavior : public Behavior
         MenuBehavior();
         ~MenuBehavior();
 
-        virtual void update();
+        void update();
     private:
 };
 

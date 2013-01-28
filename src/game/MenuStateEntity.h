@@ -9,8 +9,6 @@ class MenuStateEntity : public Entity
     public:
         MenuStateEntity();
         ~MenuStateEntity();
-
-    private:
 };
 
 #endif // MENUSTATEENTITY_H

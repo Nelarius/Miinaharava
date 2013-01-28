@@ -70,11 +70,14 @@ unsigned int EntityManager::getHighestAvailableIdent() const
 
 void EntityManager::onLoop()
 {
-    std::for_each(_gameObjects.begin(), _gameObjects.end(), EntityUpdate());
+    //iterate through copy to avoid map mutation during update loop:
+    std::map<const unsigned int, Entity*> tempMap = _gameObjects;
+    std::for_each(tempMap.begin(), tempMap.end(), EntityUpdate());
 }
 
 void EntityManager::onRender(sf::RenderWindow& window)
 {
+    //POSSIBLY ITERATE THROUGH COPY OF MAP HERE AS WELL!
     std::map<const unsigned int, Entity*>::iterator it;
     for (it = _gameObjects.begin(); it != _gameObjects.end(); it++)
     {

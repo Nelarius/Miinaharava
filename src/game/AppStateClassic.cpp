@@ -16,10 +16,10 @@ AppStateClassic::~AppStateClassic()
 
 void AppStateClassic::activate()
 {
-    if (!App::getInstance()->getEntityManager().add(3u, new GridEntity()))
-    {
-        std::cout << "entity not added." << std::endl;
-    }
+    ///note! if the newly created grid entity creates a bunch of new entities within its constructor, this entity will not be available for 3u!
+    GridEntity* grid = new GridEntity();
+    unsigned int highest = App::getInstance()->getEntityManager().getHighestAvailableIdent();
+    App::getInstance()->getEntityManager().add(highest, grid);
 }
 
 void AppStateClassic::deactivate()

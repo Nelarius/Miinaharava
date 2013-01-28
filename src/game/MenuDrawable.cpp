@@ -1,11 +1,9 @@
-#include "SplashScreenDrawable.h"
-#include <engine/stdincl.h>
+#include "MenuDrawable.h"
 #include <iostream>
 
-SplashScreenDrawable::SplashScreenDrawable()
+MenuDrawable::MenuDrawable()
 {
-    _text = sf::Text("Splashscreen");
-
+    _text = sf::Text("Menu screen");
     sf::Font font;
     if (font.loadFromFile("fonts/data-latin.ttf"))
     {
@@ -20,12 +18,12 @@ SplashScreenDrawable::SplashScreenDrawable()
     _text.setPosition(30.0,30.0);
 }
 
-SplashScreenDrawable::~SplashScreenDrawable()
+MenuDrawable::~MenuDrawable()
 {
     //dtor
 }
 
-void SplashScreenDrawable::draw(sf::RenderWindow& window)
+void MenuDrawable::draw(sf::RenderWindow& window)
 {
     window.draw(_text);
 }

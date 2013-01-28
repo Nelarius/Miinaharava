@@ -14,7 +14,7 @@ App* App::getInstance()
 
 void App::initialize()
 {
-    _mainWindow.create(sf::VideoMode(800, 600, 32), "Minesweeper", sf::Style::None);
+    _mainWindow.create(sf::VideoMode(180, 180, 32), "Minesweeper", sf::Style::None);
     _mainWindow.resetGLStates();
     _mainWindow.setFramerateLimit(60);
 

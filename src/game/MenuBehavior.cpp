@@ -3,6 +3,7 @@
 #include "engine/App.h"
 #include "engine/stdincl.h"
 #include "engine/AppState.h"
+#include <iostream>
 
 MenuBehavior::MenuBehavior()
 {
@@ -16,7 +17,7 @@ MenuBehavior::~MenuBehavior()
 
 void MenuBehavior::update()
 {
-    App::getInstance()->getWindow().clear(sf::Color(100,100,100,100));
+    App::getInstance()->getWindow().clear(sf::Color(180,180,180,255));
 
     sf::Event event;
     while (App::getInstance()->getWindow().pollEvent(event))

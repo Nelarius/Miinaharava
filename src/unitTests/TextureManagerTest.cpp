@@ -12,7 +12,7 @@ SUITE(TextureManagerTest)
 {
     TEST_FIXTURE(TextureFixture, LoadingTextureReturnsNonNullPointer)
     {
-        CHECK(bool (manager.getTexture("textures/test_tile.png")));
+        CHECK(bool (manager.getTexture("textures/covered.png")));
     }
 
     TEST_FIXTURE(TextureFixture, LoadingIncorrectTextureReturnsNullPointer)

@@ -6,6 +6,7 @@ class TileStateCovered;
 class TileStateUncovered;
 class TileStateFlagged;
 class TileStateUncertain;
+class TileDrawableSprite;
 
 class TileStateManager
 {
@@ -13,17 +14,18 @@ class TileStateManager
         TileStateManager();
         ~TileStateManager();
 
-        /*void changeState(int id);
+        void changeState(int id);
 
-        bool leftClick();
-        bool rightClick();
-        */
+        bool leftClick(TileDrawableSprite*);
+        bool rightClick(TileDrawableSprite*);
+
         enum
         {
             Covered,
             Uncovered,
             Flagged,
-            Uncertain
+            Uncertain,
+            Mine
         };
 
     private:
@@ -31,8 +33,6 @@ class TileStateManager
 
         TileStateCovered* _covered;
         TileStateUncovered* _uncovered;
-        TileStateFlagged* _flagged;
-        TileStateUncertain* _uncertain;
 
 };
 

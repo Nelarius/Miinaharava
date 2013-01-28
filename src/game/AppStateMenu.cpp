@@ -15,10 +15,7 @@ AppStateMenu::~AppStateMenu()
 
 void AppStateMenu::activate()
 {
-    if (!App::getInstance()->getEntityManager().add(2u, new MenuStateEntity()))
-    {
-        std::cout << "entity not added" << std::endl;
-    }
+    App::getInstance()->getEntityManager().add(2u, new MenuStateEntity());
 }
 
 void AppStateMenu::deactivate()
