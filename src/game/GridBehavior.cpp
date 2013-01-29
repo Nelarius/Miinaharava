@@ -87,7 +87,7 @@ unsigned int GridBehavior::getIndex(int x, int y)
 
     index += (((unsigned int) (y + TileSize)) / ((unsigned int) TileSize)) * GridWidth;
 
-    return index - 10u; //WTF, check this
+    return index - 10u; //Works, but consider changing implementation
 }
 
 float GridBehavior::getX(unsigned int index)
