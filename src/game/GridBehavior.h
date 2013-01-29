@@ -11,12 +11,13 @@ class GridBehavior : public Behavior
 
         void update();
 
-    private:
-        //methods
+        //public for testing purposes
         unsigned int getIndex(int x, int y);
         float getX(unsigned int index);
         float getY(unsigned int index);
 
+    private:
+        //methods
         bool cascade(unsigned int index);
         void placeMines();
 
