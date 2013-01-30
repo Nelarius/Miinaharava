@@ -1,6 +1,6 @@
 #Change this if you need to target a specific CMake version
 cmake_minimum_required(VERSION 2.6)
-project(myproject)
+project(Miinaharava)
 
 # Enable debug symbols by default
 if(CMAKE_BUILD_TYPE STREQUAL "")
@@ -15,15 +15,82 @@ configure_file(
   "${PROJECT_SOURCE_DIR}/src/config.h.in"
   "${PROJECT_BINARY_DIR}/config.h"
   )
-include_directories("${PROJECT_BINARY_DIR}")
+include_directories("${PROJECT_SOURCE_DIR}/src")
+message("${PROJECT_SOURCE_DIR}/src")
 
-# Define sources and executable
+# Define which sources to include
+set(sourceFiles 
+src/main.cpp
+src/engine/App.cpp
+src/engine/App.h
+src/engine/AppState.cpp
+src/engine/AppState.h
+src/engine/AppStateManager.cpp
+src/engine/AppStateManager.h
+src/engine/Behavior.cpp
+src/engine/Behavior.h
+src/engine/Drawable.cpp
+src/engine/Drawable.h
+src/engine/DrawableSprite.cpp
+src/engine/DrawableSprite.h
+src/engine/Entity.cpp
+src/engine/Entity.h
+src/engine/EntityManager.cpp
+src/engine/EntityManager.h
+src/engine/stdincl.h
+src/engine/TextureManager.cpp
+src/engine/TextureManager.h
+src/game/AppStateClassic.cpp
+src/game/AppStateClassic.h
+src/game/AppStateMenu.cpp
+src/game/AppStateMenu.h
+src/game/AppStateSplashScreen.cpp
+src/game/AppStateSplashScreen.h
+src/game/GridBehavior.cpp
+src/game/GridBehavior.h
+src/game/GridEntity.cpp
+src/game/GridEntity.h
+src/game/MenuBehavior.cpp
+src/game/MenuBehavior.h
+src/game/MenuDrawable.cpp
+src/game/MenuDrawable.h
+src/game/MenuStateEntity.cpp
+src/game/MenuStateEntity.h
+src/game/Parameters.h
+src/game/SplashScreenBehavior.cpp
+src/game/SplashScreenBehavior.h
+src/game/SplashScreenDrawable.cpp
+src/game/SplashScreenDrawable.h
+src/game/SplashScreenEntity.cpp
+src/game/SplashScreenEntity.h
+src/game/TileDrawableSprite.cpp
+src/game/TileDrawableSprite.h
+src/game/TileEntity.cpp
+src/game/TileEntity.h
+src/game/TileState.cpp
+src/game/TileState.h
+src/game/TileStateCovered.cpp
+src/game/TileStateCovered.h
+src/game/TileStateUncovered.cpp
+src/game/TileStateUncovered.h
+src/game/TileStateFlagged.cpp
+src/game/TileStateFlagged.h
+src/game/TileStateManager.cpp
+src/game/TileStateManager.h
+src/game/TileStateUncertain.cpp
+src/game/TileStateUncertain.h
+src/utilities/LinGen.cpp
+src/utilities/LinGen.h
+)
+
+set(sourceIncludes
+src/engine
+src/game
+src/utilities)
+
+# Define executable
 set(EXECUTABLE_NAME "Miinaharava")
-aux_source_directory(${PROJECT_SOURCE_DIR}/src/engine/ engineSource)
-aux_source_directory(${PROJECT_SOURCE_DIR}/src/game/ gameSource)
-aux_source_directory(${PROJECT_SOURCE_DIR}/src/unitTests/ testSource)
-aux_source_directory(${PROJECT_SOURCE_DIR}/src/utilities/ utilitySource)
-add_executable(${EXECUTABLE_NAME} ${mainSource} ${engineSource} ${gameSource} ${testSource} ${utilitySource})
+add_executable(${EXECUTABLE_NAME} ${sourceFiles})
 
 #Define where header files reside
 set(SFML_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/sfml/include" ${SFML_INCLUDE_DIR})

@@ -1,7 +1,7 @@
 #ifndef APPSTATECLASSIC_H
 #define APPSTATECLASSIC_H
 
-#include "engine/AppState.h"
+#include <engine/AppState.h>
 
 
 class AppStateClassic : public AppState

@@ -1,8 +1,8 @@
 #ifndef ENTITYMANAGER_H
 #define ENTITYMANAGER_H
 
-#include "engine/stdincl.h"
-#include "engine/Entity.h"
+#include "stdincl.h"
+#include "Entity.h"
 #include <map>
 #include <utility>
 #include "Behavior.h"

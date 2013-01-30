@@ -1,7 +1,7 @@
 #ifndef APPSTATESPLASHSCREEN_H
 #define APPSTATESPLASHSCREEN_H
 
-#include "engine/AppState.h"
+#include <engine/AppState.h>
 
 class AppStateSplashScreen : public AppState
 {

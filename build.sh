@@ -1,10 +1,13 @@
 #!/bin/bash
 
+root=$PWD
 
-ROOT='pwd'
+mkdir build
+cd build
 
-cd build -DCMAKE_PREFIX_PATH=$ROOT/sfml/lib ..
-
-cmake ..
+cmake -D CMAKE_PREFIX_PATH:PATH=$root/sfml/lib ..
 
 make
+
+cp -r $root/src/textures .
+cp -r $root/src/fonts .

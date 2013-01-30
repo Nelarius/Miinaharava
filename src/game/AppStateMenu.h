@@ -1,7 +1,7 @@
 #ifndef APPSTATEMENU_H
 #define APPSTATEMENU_H
 
-#include "engine/AppState.h"
+#include <engine/AppState.h>
 
 class AppStateMenu : public AppState
 {

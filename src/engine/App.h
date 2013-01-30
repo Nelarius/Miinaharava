@@ -1,10 +1,10 @@
 #ifndef APP_H
 #define APP_H
 
-#include "stdincl.h"
-#include "EntityManager.h"
-#include "TextureManager.h"
-#include "AppStateManager.h"
+#include <engine/stdincl.h>
+#include <engine/EntityManager.h>
+#include <engine/TextureManager.h>
+#include <engine/AppStateManager.h>
 
 /// \brief App class uses singleton design pattern.
 ///

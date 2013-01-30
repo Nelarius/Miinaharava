@@ -1,4 +1,4 @@
-//#include "UnitTest++.h"
+#include "UnitTest++.h"
 #include "engine/TextureManager.h"
 
 struct TextureFixture
