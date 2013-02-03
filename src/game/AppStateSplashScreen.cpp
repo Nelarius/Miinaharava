@@ -17,6 +17,7 @@ void AppStateSplashScreen::activate()
 {
     unsigned int highest = App::getInstance()->getEntityManager().getHighestAvailableIdent();
     App::getInstance()->getEntityManager().add(highest, new SplashScreenEntity());
+    App::getInstance()->getWindow().clear(sf::Color::Black);
 }
 
 void AppStateSplashScreen::deactivate()

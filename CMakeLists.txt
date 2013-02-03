@@ -57,6 +57,7 @@ src/game/MenuDrawable.h
 src/game/MenuStateEntity.cpp
 src/game/MenuStateEntity.h
 src/game/Parameters.h
+src/game/Parameters.cpp
 src/game/SplashScreenBehavior.cpp
 src/game/SplashScreenBehavior.h
 src/game/SplashScreenDrawable.cpp

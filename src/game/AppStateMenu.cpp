@@ -16,6 +16,7 @@ AppStateMenu::~AppStateMenu()
 void AppStateMenu::activate()
 {
     App::getInstance()->getEntityManager().add(2u, new MenuStateEntity());
+    App::getInstance()->getWindow().clear(sf::Color::Black);
 }
 
 void AppStateMenu::deactivate()

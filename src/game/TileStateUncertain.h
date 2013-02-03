@@ -1,13 +1,19 @@
 #ifndef TILESTATEUNCERTAIN_H
 #define TILESTATEUNCERTAIN_H
 
+#include <game/TileState.h>
 
-class TileStateUncertain
+class TileStateUncertain : public TileState
 {
     public:
-        TileStateUncertain();
+        TileStateUncertain(TileStateManager*);
         ~TileStateUncertain();
-    protected:
+
+        bool leftClick(TileDrawableSprite*);
+        bool rightClick(TileDrawableSprite*);
+
+        const int getState() const;
+
     private:
 };
 

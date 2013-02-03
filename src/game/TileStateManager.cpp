@@ -13,10 +13,12 @@
 ///
 ///
 
-TileStateManager::TileStateManager()
+TileStateManager::TileStateManager() : _currentState(0), _covered(0), _uncovered(0), _flagged(0), _uncertain(0)
 {
     _covered = new TileStateCovered(this);
     _uncovered = new TileStateUncovered(this);
+    _flagged = new TileStateFlagged(this);
+    _uncertain = new TileStateUncertain(this);
     _currentState = _covered;
 }
 
@@ -24,6 +26,8 @@ TileStateManager::~TileStateManager()
 {
     delete _covered;
     delete _uncovered;
+    delete _flagged;
+    delete _uncertain;
 }
 
 void TileStateManager::changeState(int id)
@@ -34,6 +38,12 @@ void TileStateManager::changeState(int id)
                             break;
 
         case Uncovered  :   _currentState = _uncovered;
+                            break;
+
+        case Flagged    :   _currentState = _flagged;
+                            break;
+
+        case Uncertain  :   _currentState = _uncertain;
                             break;
     }
 }
@@ -46,6 +56,11 @@ bool TileStateManager::leftClick(TileDrawableSprite* tile)
 bool TileStateManager::rightClick(TileDrawableSprite* tile)
 {
     return _currentState->rightClick(tile);
+}
+
+const int TileStateManager::getState() const
+{
+    return _currentState->getState();
 }
 
 

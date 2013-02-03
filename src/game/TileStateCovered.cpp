@@ -1,6 +1,8 @@
-#include "TileStateCovered.h"
+#include <game/TileStateCovered.h>
 #include <game/TileStateManager.h>
 #include <game/TileDrawableSprite.h>
+
+#include <iostream>
 
 TileStateCovered::TileStateCovered(TileStateManager* owner) : TileState(owner)
 {
@@ -12,20 +14,29 @@ TileStateCovered::~TileStateCovered()
     //dtor
 }
 
+//returns true if the tile has a mine
 bool TileStateCovered::leftClick(TileDrawableSprite* tile)
 {
     if (tile->hasMine())
     {
         tile->setActiveSprite(TileStateManager::Mine);
-        return false;
+        return true;
     }
 
     _owner->changeState(TileStateManager::Uncovered);
     tile->setActiveSprite(TileStateManager::Uncovered);
-    return true;
+
+    return false;
 }
 
 bool TileStateCovered::rightClick(TileDrawableSprite* tile)
 {
+    _owner->changeState(TileStateManager::Flagged);
+    tile->setActiveSprite(TileStateManager::Flagged);
     return false;
+}
+
+const int TileStateCovered::getState() const
+{
+    return TileStateManager::Covered;
 }

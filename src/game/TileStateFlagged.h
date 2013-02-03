@@ -1,13 +1,19 @@
 #ifndef TILESTATEFLAGGED_H
 #define TILESTATEFLAGGED_H
 
+#include <game/TileState.h>
 
-class TileStateFlagged
+class TileStateFlagged : public TileState
 {
     public:
-        TileStateFlagged();
+        TileStateFlagged(TileStateManager*);
         ~TileStateFlagged();
-    protected:
+
+        bool leftClick(TileDrawableSprite*);
+        bool rightClick(TileDrawableSprite*);
+
+        const int getState() const;
+
     private:
 };
 

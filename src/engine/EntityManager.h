@@ -35,10 +35,6 @@ class EntityManager
         {
             void operator()(const std::pair<const unsigned int, Entity*>& p) const
             {
-                #ifdef DEBUG
-                std::cout << "removing entity with ident " << p.first << std::endl << std::endl;
-                #endif
-
                 delete p.second;
             }
         };

@@ -19,6 +19,8 @@ class TileStateManager
         bool leftClick(TileDrawableSprite*);
         bool rightClick(TileDrawableSprite*);
 
+        const int getState() const;
+
         enum
         {
             Covered,
@@ -31,8 +33,10 @@ class TileStateManager
     private:
         TileState* _currentState;
 
-        TileStateCovered* _covered;
+        TileStateCovered*   _covered;
         TileStateUncovered* _uncovered;
+        TileStateFlagged*   _flagged;
+        TileStateUncertain* _uncertain;
 
 };
 

@@ -14,6 +14,8 @@ class TileStateCovered : public TileState
         bool leftClick(TileDrawableSprite*);
         bool rightClick(TileDrawableSprite*);
 
+        const int getState() const;
+
     private:
 };
 

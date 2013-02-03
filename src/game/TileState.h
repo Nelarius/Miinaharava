@@ -13,6 +13,8 @@ class TileState
         virtual bool leftClick(TileDrawableSprite*) = 0;
         virtual bool rightClick(TileDrawableSprite*) = 0;
 
+        virtual const int getState() const = 0;
+
     protected:
         TileStateManager* _owner;
 };

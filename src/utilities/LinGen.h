@@ -1,12 +1,14 @@
 #ifndef LINGEN_H
 #define LINGEN_H
 
-/// \brief Park-Miller linear congruental random number generator.
+/// \brief A random-number generator using the linear congruental algorithm.
 ///
 /// \param
 /// \param
 /// \return
 ///
+/// Uses values proposed by Park and Miller:
+/// http://en.wikipedia.org/wiki/Lehmer_RNG
 ///
 
 class LinGen

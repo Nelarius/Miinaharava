@@ -14,12 +14,15 @@ TileStateUncovered::~TileStateUncovered()
 
 bool TileStateUncovered::leftClick(TileDrawableSprite* tile)
 {
-    _owner->changeState(TileStateManager::Covered);
-    tile->setActiveSprite(TileStateManager::Covered);
-    return true;
+    return false;
 }
 
 bool TileStateUncovered::rightClick(TileDrawableSprite*)
 {
     return false;
+}
+
+const int TileStateUncovered::getState() const
+{
+    return TileStateManager::Uncovered;
 }
