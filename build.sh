@@ -11,3 +11,4 @@ make
 
 cp -r $root/src/textures .
 cp -r $root/src/fonts .
+cp $root/src/Parameters.txt .
