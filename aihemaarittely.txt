@@ -1,17 +1,17 @@
-
 --------------------------------------------------------------
 
 Aihe: Miinaharava
 
-Toteutetaan klooni klassisesta miinaharava - pelistä. 
+Toteutetaan klooni klassisesta miinaharava - pelistÃ¤.
 
-Pelissä pelaajan täytyy paljastaa ruutuja, jotka eivät sisällä miinoja. Klikkaamalla paljastamatonta ruutua jonka naapurissa ei ole miinaa, peli paljastaa kaikki ruudut joiden naapurissa ei myöskään ole miinaa. Paljastettujen ruutujen vieressä on naapurissa olevien miinojen lukumäärä. Paljastamattomat ruudut voi merkitä lipulla jos pelaaja epäilee, että siellä on miina. Peli on voitettu kun kaikki miinat on merkitty lipulla.
-
-Klassisen moodin lisäksi pelissä on myös survival-moodi, jossa haravoitava kenttä vierii jatkuvasti ylöspäin.
+Pelissï¿½ pelaajan tï¿½ytyy paljastaa ruutuja, jotka eivï¿½t sisï¿½llï¿½ miinoja. 
+Klikkaamalla paljastamatonta ruutua jonka naapurissa ei ole miinaa, peli paljastaa kaikki ruudut joiden naapurissa ei myï¿½skï¿½ï¿½n ole miinaa. 
+Paljastettujen ruutujen vieressï¿½ on naapurissa olevien miinojen lukumï¿½ï¿½rï¿½. Paljastamattomat ruudut voi merkitï¿½ lipulla jos pelaaja epï¿½ilee, ettï¿½ siellï¿½ on miina. 
+Peli on voitettu kun kaikki miinat on merkitty lipulla.
 
 --------------------------------------------------------------
 
-Käyttäjät: pelaaja
+KÃ¤yttÃ¤jÃ¤t: pelaaja
 
 --------------------------------------------------------------
 
@@ -20,5 +20,19 @@ Pelaajan toiminnot:
 -pelimoodin valitseminen
 -vaikeustason valitseminen
 -poistuminen
+
+--------------------------------------------------------------
+
+Pelin toimintaa:
+
+Vasemmalla klikkaamalla paljastuu ruutu (kaikki ruudut, joissa ei ole miinaa vieressÃ¤). EnsimmÃ¤isellÃ¤ klikkauksella ei voi
+osua miinaan. Jos pelaaja osuu miinaan, peli loppuu.
+
+Oikealla klikkaamalla voi merkitÃ¤ paljastamattoman ruudun lipulla. Jos ruudussa on miina, saa pelaaja yhden pisteen.
+Klikkaamalla oikealla uudelleen voi merkitÃ¤ ruudun kysymysmerkillÃ¤.
+
+Jos painaa molemmat hiiren napit pohjaan paljastetun ruudun pÃ¤Ã¤llÃ¤, peli paljastaa kaikki vieressÃ¤ olevat ruudut, jos
+lippuja on merkitty saman verran kuin paljastettu ruutu nÃ¤yttÃ¤Ã¤. Jos yksi lipuista on merkitty vÃ¤Ã¤rin, paljastuu miina ja 
+peli pÃ¤Ã¤ttyy.
 
 --------------------------------------------------------------
