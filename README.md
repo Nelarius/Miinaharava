@@ -1,6 +1,7 @@
 Miinaharava
 ===========
 --------Vain-Luukkaisen-silmille---------
-Ohjeetprojektin bildaamiselle: aja build.sh. Miinaharava löytyy nyt ilmestyneestä build-kansiosta.
 
-Build-skripti käyttää CMakea. Lisäsin tähän repoon käyttämäni grafiikkakirjasto. Olen toteuttanut yksikkötestit sillä tavalla, että ne ajavat samalla kun Miinaharava ajetaan (kun se käännetään debug-moodissa). Valitettavasti juuri nyt repon mukana ei tule yksikkötestikirjastoa, sillä en ole kääntänyt sitä Linuxille vielä. Tästä syystä yksikkötestitoiminallisuus on kommentoitu pois. Koitan saada yksikkötestit toimimaan repon mukana ASAP.
+Ohjeet projektin bildaamiselle: aja build.sh. Miinaharava lï¿½ytyy nyt ilmestyneestï¿½ build-kansiosta.
+
+Build-skripti kï¿½yttï¿½ï¿½ CMakea. Lisï¿½sin tï¿½hï¿½n repoon kï¿½yttï¿½mï¿½ni grafiikkakirjasto. Olen toteuttanut yksikkï¿½testit sillï¿½ tavalla, ettï¿½ ne ajavat samalla kun Miinaharava ajetaan (kun se kï¿½ï¿½nnetï¿½ï¿½n debug-moodissa). Valitettavasti juuri nyt repon mukana ei tule yksikkï¿½testikirjastoa, sillï¿½ en ole kï¿½ï¿½ntï¿½nyt sitï¿½ Linuxille vielï¿½. Tï¿½stï¿½ syystï¿½ yksikkï¿½testitoiminallisuus on kommentoitu pois. Koitan saada yksikkï¿½testit toimimaan repon mukana ASAP.
