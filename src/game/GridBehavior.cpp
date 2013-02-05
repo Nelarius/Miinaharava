@@ -8,10 +8,11 @@
 #include <game/Parameters.h>
 #include <utilities/LinGen.h>
 #include <ctime>
+#include <algorithm>
 
 #include <iostream>
 
-GridBehavior::GridBehavior() : _score(0), _firstClick(true)
+GridBehavior::GridBehavior() : _score(0), _firstClick(true), _bothMouseButtonsWereDown(false)
 {
     EntityManager& entityManager = App::getInstance()->getEntityManager();
 
@@ -57,6 +58,17 @@ void GridBehavior::update()
                 placeMines(getIndex(event.mouseButton.x, event.mouseButton.y));
             }
 
+            //check real-time input for both mouse buttons pressed
+            if (sf::Mouse::isButtonPressed(sf::Mouse::Left) and sf::Mouse::isButtonPressed(sf::Mouse::Right))
+            {
+                handleBothMouseButtonsReleased(event);
+            }
+
+            if (_bothMouseButtonsWereDown)
+            {
+                //handleBothMouseButtonsReleased(event);
+            }
+
             if (event.mouseButton.button == sf::Mouse::Left)
             {
                 #ifdef DEBUG
@@ -79,7 +91,10 @@ void GridBehavior::cascade(unsigned int index)
     int count = getAdjacentMines(index);
     TileDrawableSprite* tile = dynamic_cast<TileDrawableSprite*>(App::getInstance()->getEntityManager().getEntity(index)->getDrawable());
 
-    tile->leftClick();
+    if (tile->leftClick())
+    {
+        revealMines();
+    }
 
     if (count != 0)
     {
@@ -109,6 +124,23 @@ int GridBehavior::getAdjacentMines(unsigned int index)
         {
             TileDrawableSprite* tile = dynamic_cast<TileDrawableSprite*>(App::getInstance()->getEntityManager().getEntity(index + row + column)->getDrawable());
             if (tile->hasMine())
+            {
+                ++count;
+            }
+        }
+    }
+    return count;
+}
+
+int GridBehavior::getAdjacentFlags(unsigned int index)
+{
+    int count = 0;
+    for (int row = -Parameters::GridWidth() - 2; row <= (int) Parameters::GridWidth() + 2; row += Parameters::GridWidth() + 2)
+    {
+        for (int column = -1; column <= 1; column++)
+        {
+            TileDrawableSprite* tile = dynamic_cast<TileDrawableSprite*>(App::getInstance()->getEntityManager().getEntity(index + row + column)->getDrawable());
+            if (tile->getState() == TileStateManager::Flagged)
             {
                 ++count;
             }
@@ -168,8 +200,7 @@ void GridBehavior::handleLeftClick(sf::Event& event)
     TileDrawableSprite* tile = dynamic_cast<TileDrawableSprite*>(App::getInstance()->getEntityManager().getEntity(index)->getDrawable());
     if (tile->leftClick())
     {
-        App::getInstance()->getAppStateManager().setActiveAppState(AppState::Menu);
-        return;
+        revealMines();
     }
 
     cascade(index);
@@ -180,4 +211,40 @@ void GridBehavior::handleRightClick(sf::Event& event)
     int index = getIndex(event.mouseButton.x, event.mouseButton.y);
     TileDrawableSprite* tile = dynamic_cast<TileDrawableSprite*>(App::getInstance()->getEntityManager().getEntity(index)->getDrawable());
     tile->rightClick();
+}
+
+void GridBehavior::handleBothMouseButtonsPressedDown(sf::Event& event)
+{
+    int index = getIndex(event.mouseButton.x, event.mouseButton.y);
+
+    _bothMouseButtonsWereDown = true;
+
+    for (int row = -Parameters::GridWidth() - 2; row <= (int) Parameters::GridWidth() + 2; row += Parameters::GridWidth() + 2)
+    {
+        for (int column = -1; column <= 1; column++)
+        {
+            cascade(index + row + column);
+        }
+    }
+}
+
+void GridBehavior::handleBothMouseButtonsReleased(sf::Event& event)
+{
+    int index = getIndex(event.mouseButton.x, event.mouseButton.y);
+
+    _bothMouseButtonsWereDown = false;
+
+    for (int row = -Parameters::GridWidth() - 2; row <= (int) Parameters::GridWidth() + 2; row += Parameters::GridWidth() + 2)
+    {
+        for (int column = -1; column <= 1; column++)
+        {
+            cascade(index + row + column);
+        }
+    }
+
+}
+
+void GridBehavior::revealMines()
+{
+    std::for_each(_mines.begin(), _mines.end(), MineRevealer());
 }

@@ -76,6 +76,7 @@ src/game/TileStateUncovered.cpp
 src/game/TileStateUncovered.h
 src/game/TileStateFlagged.cpp
 src/game/TileStateFlagged.h
+src/game/TileStatePeek.cpp
 src/game/TileStateManager.cpp
 src/game/TileStateManager.h
 src/game/TileStateUncertain.cpp

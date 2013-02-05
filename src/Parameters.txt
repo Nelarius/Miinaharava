@@ -1,4 +1,4 @@
 TileSize = 20
 GridWidth = 75
 GridHeight = 40
-MineCount = 250
+MineCount = 350

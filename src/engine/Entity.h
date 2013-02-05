@@ -4,20 +4,19 @@
 #include <engine/Behavior.h>
 #include <engine/Drawable.h>
 
-/// \brief A type of container for game components.
-///
-/// This class is a container of sorts for the two types of
-/// game components: behaviors and drawables. This class is to be
-/// inherited from.
-///
-
+/// \brief A generic entity model, composed of a behavior and a drawable.
 class Entity
 {
     public:
         Entity();
         virtual ~Entity();
 
+        /// \brief
+        /// \return A pointer to the Behavior-object owned by this class.
         Behavior* getBehavior() const;
+
+        /// \brief
+        /// \return A pointer to the Drawable-object owned by this class.
         Drawable* getDrawable() const;
 
     protected:

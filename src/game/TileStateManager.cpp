@@ -4,6 +4,7 @@
 #include <game/TileStateUncovered.h>
 #include <game/TileStateFlagged.h>
 #include <game/TileStateUncertain.h>
+#include <game/TileStatePeek.h>
 
 /// \brief The constructor sets the tile state to covered by default.
 ///
@@ -13,12 +14,13 @@
 ///
 ///
 
-TileStateManager::TileStateManager() : _currentState(0), _covered(0), _uncovered(0), _flagged(0), _uncertain(0)
+TileStateManager::TileStateManager() : _currentState(0), _covered(0), _uncovered(0), _flagged(0), _uncertain(0), _peek(0)
 {
     _covered = new TileStateCovered(this);
     _uncovered = new TileStateUncovered(this);
     _flagged = new TileStateFlagged(this);
     _uncertain = new TileStateUncertain(this);
+    _peek = new TileStatePeek(this);
     _currentState = _covered;
 }
 
@@ -44,6 +46,9 @@ void TileStateManager::changeState(int id)
                             break;
 
         case Uncertain  :   _currentState = _uncertain;
+                            break;
+
+        case Peek       :   _currentState = _peek;
                             break;
     }
 }

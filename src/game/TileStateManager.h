@@ -6,6 +6,7 @@ class TileStateCovered;
 class TileStateUncovered;
 class TileStateFlagged;
 class TileStateUncertain;
+class TileStatePeek;
 class TileDrawableSprite;
 
 class TileStateManager
@@ -27,7 +28,8 @@ class TileStateManager
             Uncovered,
             Flagged,
             Uncertain,
-            Mine
+            Mine,
+            Peek
         };
 
     private:
@@ -37,6 +39,7 @@ class TileStateManager
         TileStateUncovered* _uncovered;
         TileStateFlagged*   _flagged;
         TileStateUncertain* _uncertain;
+        TileStatePeek*      _peek;
 
 };
 

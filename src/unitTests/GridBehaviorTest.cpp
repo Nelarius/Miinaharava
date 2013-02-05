@@ -1,4 +1,4 @@
-//#include <unitTest++.h>
+#include <unitTest++.h>
 #include <game/GridBehavior.h>
 #include <game/Parameters.h>
 
@@ -17,7 +17,7 @@ SUITE(GridBehaviorTest)
     TEST_FIXTURE(GridFixture, GetIndexReturnsCorrectFirstTile)
     {
         //in the first tile
-        CHECK_EQUAL(0u, grid.getIndex(TileSize - 3u, TileSize - 5u));
+        CHECK_EQUAL(0u, grid.getIndex(Parameters::TileSize() - 3u, Parameters::TileSize() - 5u));
     }
 
     TEST_FIXTURE(GridFixture, GetXReturnsCorrectValueForFirstTile)
@@ -34,16 +34,16 @@ SUITE(GridBehaviorTest)
 
     TEST_FIXTURE(GridFixture, GetXReturnsCorrectValueForSecondRowTile)
     {
-        CHECK_EQUAL(0.0, grid.getX(GridWidth));
+        CHECK_EQUAL(0.0, grid.getX(Parameters::GridWidth()));
     }
 
     TEST_FIXTURE(GridFixture, GetYReturnsCorrectValueForSecondRowTile)
     {
-        CHECK_EQUAL(TileSize, grid.getY(GridWidth + 1u));
+        CHECK_EQUAL(Parameters::TileSize(), grid.getY(Parameters::GridWidth() + 1u));
     }
 
     TEST_FIXTURE(GridFixture, GetIndexReturnsCorrectForTenthTile)
     {
-        CHECK_EQUAL(9u, grid.getIndex(TileSize - 3, TileSize + 3));
+        CHECK_EQUAL(9u, grid.getIndex(Parameters::TileSize() - 3, Parameters::TileSize() + 3));
     }
 }

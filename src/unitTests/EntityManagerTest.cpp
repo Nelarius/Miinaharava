@@ -1,4 +1,4 @@
-//#include "UnitTest++.h"
+#include "UnitTest++.h"
 #include "engine/EntityManager.h"
 #include "game/GridEntity.h"
 #include "game/SplashScreenEntity.h"

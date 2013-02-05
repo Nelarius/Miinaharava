@@ -13,20 +13,38 @@
 class App
 {
     public:
+
+        /// \brief Returns the singleton instance of the class.
+        ///
+        /// \return A pointer to the instance of App.
+        ///
         static App* getInstance();
 
-        void initialize();
+        /// \brief Executes all application functionality.
         void execute();
-        void onLoop();
-        void onRender();
 
+        /// \brief
+        /// \return The reference to sf::RenderWindow that this instance owns.
         sf::RenderWindow& getWindow();
+
+        /// \brief
+        /// \return The reference to TextureManager that this instance owns.
         TextureManager& getTextureManager();
+
+        /// \brief
+        /// \return The reference to EntityManager that this instance owns.
         EntityManager& getEntityManager();
+
+        /// \brief
+        /// \return The reference to AppStateManager that this instance owns.
         AppStateManager& getAppStateManager();
 
     private:
         App();
+        void initialize();
+        void onLoop();
+        void onRender();
+
         sf::RenderWindow _mainWindow;
         TextureManager _textureManager;
         EntityManager _entityManager;

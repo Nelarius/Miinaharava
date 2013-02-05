@@ -50,6 +50,6 @@ int Parameters::ScreenWidth()
 
 int Parameters::ScreenHeight()
 {
-    //return TileSize * GridWidth
+    //return TileSize * GridHeight
     return _values[0] * _values[2];
 }
