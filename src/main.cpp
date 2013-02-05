@@ -1,5 +1,5 @@
 #include <engine/App.h>
-#include "UnitTest++.h"
+#include <UnitTest++.h>
 #include <config.h>
 #include <game/Parameters.h>
 #include <iostream>

@@ -1,4 +1,4 @@
-#include <unitTest++.h>
+#include <UnitTest++.h>
 #include <game/GridBehavior.h>
 #include <game/Parameters.h>
 

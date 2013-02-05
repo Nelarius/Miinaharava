@@ -1,5 +1,5 @@
 #include <game/TileStateUncertain.h>
-#include <game/TIleStateManager.h>
+#include <game/TileStateManager.h>
 #include <game/TileDrawableSprite.h>
 
 TileStateUncertain::TileStateUncertain(TileStateManager* owner) : TileState(owner)

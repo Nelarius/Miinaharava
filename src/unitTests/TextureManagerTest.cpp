@@ -1,5 +1,5 @@
-#include "UnitTest++.h"
-#include "engine/TextureManager.h"
+#include <UnitTest++.h>
+#include <engine/TextureManager.h>
 
 struct TextureFixture
 {

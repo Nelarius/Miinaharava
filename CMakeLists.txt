@@ -83,6 +83,11 @@ src/game/TileStateUncertain.cpp
 src/game/TileStateUncertain.h
 src/utilities/LinGen.cpp
 src/utilities/LinGen.h
+src/unitTests/AppStateManagerTest.cpp
+src/unitTests/EntityManagerTest.cpp
+src/unitTests/GridBehaviorTest.cpp
+src/unitTests/TextureManagerTest.cpp
+src/unitTests/TileStateManagerTest.cpp
 )
 
 set(sourceIncludes
@@ -96,6 +101,12 @@ add_executable(${EXECUTABLE_NAME} ${sourceFiles})
 
 #Define where header files reside
 set(SFML_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/sfml/include" ${SFML_INCLUDE_DIR})
+
+#Set compiler flags
+set(CMAKE_CXX_FLAGS "-std=c++0x")
+
+#linhk to UnitTest++
+target_link_libraries(${EXECUTABLE_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/sfml/lib/libUnitTest++.a")
 
 # Detect and add SFML
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
