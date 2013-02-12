@@ -1,6 +1,6 @@
-#include "AppStateMenu.h"
-#include "engine/App.h"    //for window reference
-#include "game/MenuStateEntity.h"
+#include <game/AppStateMenu.h>
+#include <engine/App.h>    //for window reference
+#include <game/MenuGUIEntity.h>
 #include <iostream>
 
 AppStateMenu::AppStateMenu()
@@ -15,8 +15,9 @@ AppStateMenu::~AppStateMenu()
 
 void AppStateMenu::activate()
 {
-    App::getInstance()->getEntityManager().add(2u, new MenuStateEntity());
-    App::getInstance()->getWindow().clear(sf::Color::Black);
+    MenuGUIEntity* gui = new MenuGUIEntity();
+    unsigned int index = App::getInstance()->getEntityManager().getHighestAvailableIdent();
+    App::getInstance()->getEntityManager().add(index, gui);
 }
 
 void AppStateMenu::deactivate()

@@ -1,11 +1,7 @@
 #ifndef PARAMETERS_H
 #define PARAMETERS_H
 
-/// Variables declared in the following order:
-/// TileSize
-/// GridWidth
-/// GridHeight
-/// Minecount
+/// \brief Static methods for reading in values from Parameters.txt
 class Parameters
 {
     public:
@@ -20,8 +16,21 @@ class Parameters
         static int ScreenHeight();
         static int ScreenWidth();
 
+        static void setDifficulty(int difficulty);
+
+        enum
+        {
+            Easy,
+            Medium,
+            Hard
+        };
+
     private:
-        static float _values[4];
+        static float _values[10];
+
+        static float _currentGridWidth;
+        static float _currentGridHeight;
+        static float _currentMineCount;
 };
 
 #endif // PARAMETERS_H_INCLUDED

@@ -26,7 +26,6 @@ class GridBehavior : public Behavior
 
     private:
         //methods
-        //consider doing a handle leftClick which combines methods?
         void cascade(unsigned int index);
         int getAdjacentMines(unsigned int);
         int getAdjacentFlags(unsigned int);
@@ -45,12 +44,18 @@ class GridBehavior : public Behavior
         void handleLeftClick(sf::Event& event);
         void handleRightClick(sf::Event& event);
         void handleBothMouseButtonsPressedDown(sf::Event& event);
-        void handleBothMouseButtonsReleased(sf::Event& event);
+        void handleBothMouseButtonsReleased();  //does not handle an event
+
+        void setSurroundingToPeek(unsigned int index);
+        void setSurroundingToCovered(unsigned int index);
+
+        bool isOnEdge(unsigned int index);  //THIS DOESN'T WORK
 
         //attributes:
         int _score;
         bool _firstClick;
         bool _bothMouseButtonsWereDown;
+        unsigned int _mousePressedDownAt;
 
         std::set<int> _mines;   //stores references to placed mine indices
 };

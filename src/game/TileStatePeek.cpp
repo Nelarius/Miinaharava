@@ -12,6 +12,16 @@ TileStatePeek::~TileStatePeek()
     //dtor
 }
 
+void TileStatePeek::activate(TileDrawableSprite* tile)
+{
+    tile->setActiveSprite(TileStateManager::Uncovered);
+}
+
+void TileStatePeek::deactivate(TileDrawableSprite* tile)
+{
+    tile->setActiveSprite(TileStateManager::Covered);
+}
+
 bool TileStatePeek::leftClick(TileDrawableSprite* tile)
 {
     return false;

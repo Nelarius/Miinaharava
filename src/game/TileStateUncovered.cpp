@@ -12,6 +12,16 @@ TileStateUncovered::~TileStateUncovered()
     //dtor
 }
 
+void TileStateUncovered::activate(TileDrawableSprite* tile)
+{
+    //
+}
+
+void TileStateUncovered::deactivate(TileDrawableSprite* tile)
+{
+    //
+}
+
 bool TileStateUncovered::leftClick(TileDrawableSprite* tile)
 {
     return false;

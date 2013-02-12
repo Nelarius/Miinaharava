@@ -10,6 +10,9 @@ class TileStatePeek : public TileState
         TileStatePeek(TileStateManager*);
         ~TileStatePeek();
 
+        void activate(TileDrawableSprite* tile);
+        void deactivate(TileDrawableSprite* tile);
+
         bool leftClick(TileDrawableSprite*);
         bool rightClick(TileDrawableSprite*);
 

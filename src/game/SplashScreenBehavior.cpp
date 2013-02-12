@@ -1,11 +1,10 @@
-#include "game/SplashScreenBehavior.h"
-#include "engine/App.h"
-#include "engine/AppState.h"
-#include "engine/stdincl.h"
+#include <game/SplashScreenBehavior.h>
+#include <engine/App.h>
+#include <engine/AppState.h>
 
 SplashScreenBehavior::SplashScreenBehavior()
 {
-    //ctor
+    _start = _clock.getElapsedTime();
 }
 
 SplashScreenBehavior::~SplashScreenBehavior()
@@ -15,19 +14,16 @@ SplashScreenBehavior::~SplashScreenBehavior()
 
 void SplashScreenBehavior::update()
 {
-    App::getInstance()->getWindow().clear(sf::Color(204,204,204,255));
+    App::getInstance()->getWindow().clear(sf::Color::Black);
 
-    sf::Event event;
-    while (App::getInstance()->getWindow().pollEvent(event))
+    sf::Time time = _clock.getElapsedTime();
+
+    //wait two seconds
+    if (time < _start + sf::seconds(0.9))
     {
-        if (event.type == sf::Event::MouseButtonPressed)
-        {
-            App::getInstance()->getAppStateManager().setActiveAppState(AppState::Menu);
-        }
-
-        if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape))
-        {
-            App::getInstance()->getWindow().close();
-        }
+        return;
     }
+
+    App::getInstance()->getAppStateManager().setActiveAppState(AppState::Menu);
+
 }

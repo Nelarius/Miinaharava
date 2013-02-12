@@ -11,6 +11,9 @@ class TileStateUncovered : public TileState
         TileStateUncovered(TileStateManager*);
         ~TileStateUncovered();
 
+        void activate(TileDrawableSprite* tile);
+        void deactivate(TileDrawableSprite* tile);
+
         bool leftClick(TileDrawableSprite*);
         bool rightClick(TileDrawableSprite*);
 

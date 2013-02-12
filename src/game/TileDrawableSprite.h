@@ -32,6 +32,8 @@ class TileDrawableSprite : public DrawableSprite
         const int getState() const;
 
         void displayCount(int count);
+        int getCount() const;
+        void setState(int state);
 
     private:
         void hideCount();

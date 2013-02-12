@@ -1,7 +1,10 @@
 #include <game/Parameters.h>
 #include <fstream>
 
-float Parameters::_values[4];
+float Parameters::_values[10];
+float Parameters::_currentGridWidth = 0;
+float Parameters::_currentGridHeight = 0;
+float Parameters::_currentMineCount = 0;
 
 void Parameters::load()
 {
@@ -9,7 +12,7 @@ void Parameters::load()
 
     if (fin.is_open())
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 10; i++)
         {
             while (fin.get() != '=')
                 continue;
@@ -20,6 +23,10 @@ void Parameters::load()
 
     fin.clear();
     fin.close();
+
+    _currentGridWidth   = _values[4];
+    _currentGridHeight  = _values[5];
+    _currentMineCount   = _values[6];
 }
 
 float Parameters::TileSize()
@@ -29,27 +36,47 @@ float Parameters::TileSize()
 
 unsigned int Parameters::GridWidth()
 {
-    return _values[1];
+    return _currentGridWidth;
 }
 
 unsigned int Parameters::GridHeight()
 {
-    return _values[2];
+    return _currentGridHeight;
 }
 
 int Parameters::MineCount()
 {
-    return _values[3];
+    return _currentMineCount;
 }
 
 int Parameters::ScreenWidth()
 {
     //return TileSize * GridWidth
-    return _values[0] * _values[1];
+    return _values[0] * _currentGridWidth;
 }
 
 int Parameters::ScreenHeight()
 {
     //return TileSize * GridHeight
-    return _values[0] * _values[2];
+    return _values[0] * _currentGridHeight;
+}
+
+void Parameters::setDifficulty(int difficulty)
+{
+    switch (difficulty)
+    {
+        case Easy :     _currentGridWidth = _values[1];
+                        _currentGridHeight = _values[2];
+                        _currentMineCount = _values[3];
+                        break;
+
+        case Medium :   _currentGridWidth = _values[4];
+                        _currentGridHeight = _values[5];
+                        _currentMineCount = _values[6];
+                        break;
+
+        case Hard :     _currentGridWidth = _values[7];
+                        _currentGridHeight = _values[8];
+                        _currentMineCount = _values[9];
+    }
 }

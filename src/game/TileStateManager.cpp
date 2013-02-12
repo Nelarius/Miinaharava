@@ -11,10 +11,9 @@
 /// \param
 /// \param
 /// \return
-///
-///
 
-TileStateManager::TileStateManager() : _currentState(0), _covered(0), _uncovered(0), _flagged(0), _uncertain(0), _peek(0)
+TileStateManager::TileStateManager(TileDrawableSprite* owner) : _owner(owner), _currentState(0), _covered(0), _uncovered(0),
+                                                               _flagged(0), _uncertain(0), _peek(0)
 {
     _covered = new TileStateCovered(this);
     _uncovered = new TileStateUncovered(this);
@@ -34,21 +33,28 @@ TileStateManager::~TileStateManager()
 
 void TileStateManager::changeState(int id)
 {
+    _currentState->deactivate(_owner);
+
     switch (id)
     {
         case Covered    :   _currentState = _covered;
+                            _currentState->activate(_owner);
                             break;
 
         case Uncovered  :   _currentState = _uncovered;
+                            _currentState->activate(_owner);
                             break;
 
         case Flagged    :   _currentState = _flagged;
+                            _currentState->activate(_owner);
                             break;
 
         case Uncertain  :   _currentState = _uncertain;
+                            _currentState->activate(_owner);
                             break;
 
         case Peek       :   _currentState = _peek;
+                            _currentState->activate(_owner);
                             break;
     }
 }

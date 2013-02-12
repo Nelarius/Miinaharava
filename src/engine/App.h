@@ -39,6 +39,11 @@ class App
         /// \return The reference to AppStateManager that this instance owns.
         AppStateManager& getAppStateManager();
 
+        /// \brief Closes the current window and creates a new one of the specified width & height.
+        /// \param width The new width.
+        /// \param height The new height
+        void resize();
+
     private:
         App();
         void initialize();

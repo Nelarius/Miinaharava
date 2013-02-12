@@ -12,7 +12,7 @@
 
 #include <iostream>
 
-GridBehavior::GridBehavior() : _score(0), _firstClick(true), _bothMouseButtonsWereDown(false)
+GridBehavior::GridBehavior() : _score(0), _firstClick(true), _bothMouseButtonsWereDown(false), _mousePressedDownAt(0)
 {
     EntityManager& entityManager = App::getInstance()->getEntityManager();
 
@@ -50,6 +50,11 @@ void GridBehavior::update()
             App::getInstance()->getWindow().close();
         }
 
+        if (event.type == sf::Event::MouseButtonReleased and _bothMouseButtonsWereDown)
+        {
+            handleBothMouseButtonsReleased();
+        }
+
         if (event.type == sf::Event::MouseButtonPressed)
         {
             if (_firstClick)
@@ -61,12 +66,7 @@ void GridBehavior::update()
             //check real-time input for both mouse buttons pressed
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left) and sf::Mouse::isButtonPressed(sf::Mouse::Right))
             {
-                handleBothMouseButtonsReleased(event);
-            }
-
-            if (_bothMouseButtonsWereDown)
-            {
-                //handleBothMouseButtonsReleased(event);
+                handleBothMouseButtonsPressedDown(event);
             }
 
             if (event.mouseButton.button == sf::Mouse::Left)
@@ -118,6 +118,12 @@ void GridBehavior::cascade(unsigned int index)
 int GridBehavior::getAdjacentMines(unsigned int index)
 {
     int count = 0;
+    if (isOnEdge(index))
+    {
+        std::cout << "Detected edge" << std::endl;
+        return count;
+    }
+
     for (int row = -Parameters::GridWidth() - 2; row <= (int) Parameters::GridWidth() + 2; row += Parameters::GridWidth() + 2)
     {
         for (int column = -1; column <= 1; column++)
@@ -135,6 +141,12 @@ int GridBehavior::getAdjacentMines(unsigned int index)
 int GridBehavior::getAdjacentFlags(unsigned int index)
 {
     int count = 0;
+    if (isOnEdge(index))
+    {
+        std::cout << "Detected edge" << std::endl;
+        return count;
+    }
+
     for (int row = -Parameters::GridWidth() - 2; row <= (int) Parameters::GridWidth() + 2; row += Parameters::GridWidth() + 2)
     {
         for (int column = -1; column <= 1; column++)
@@ -215,36 +227,75 @@ void GridBehavior::handleRightClick(sf::Event& event)
 
 void GridBehavior::handleBothMouseButtonsPressedDown(sf::Event& event)
 {
-    int index = getIndex(event.mouseButton.x, event.mouseButton.y);
-
     _bothMouseButtonsWereDown = true;
+    _mousePressedDownAt = getIndex(event.mouseButton.x, event.mouseButton.y);
+    setSurroundingToPeek(_mousePressedDownAt);
+}
 
-    for (int row = -Parameters::GridWidth() - 2; row <= (int) Parameters::GridWidth() + 2; row += Parameters::GridWidth() + 2)
+void GridBehavior::handleBothMouseButtonsReleased()
+{
+    _bothMouseButtonsWereDown = false;
+
+    setSurroundingToCovered(_mousePressedDownAt);
+    TileDrawableSprite* tile = dynamic_cast<TileDrawableSprite*>(App::getInstance()->getEntityManager().getEntity(_mousePressedDownAt)->getDrawable());
+
+    //check that flag count corresponds to the mine count:
+    if (tile->getCount() == getAdjacentFlags(_mousePressedDownAt))
     {
-        for (int column = -1; column <= 1; column++)
+        //cascade(index);
+        for (int row = -Parameters::GridWidth() - 2; row <= (int) Parameters::GridWidth() + 2; row += Parameters::GridWidth() + 2)
         {
-            cascade(index + row + column);
+            for (int column = -1; column <= 1; column++)
+            {
+                cascade(_mousePressedDownAt + row + column);
+            }
         }
     }
 }
 
-void GridBehavior::handleBothMouseButtonsReleased(sf::Event& event)
+void GridBehavior::setSurroundingToPeek(unsigned int index)
 {
-    int index = getIndex(event.mouseButton.x, event.mouseButton.y);
-
-    _bothMouseButtonsWereDown = false;
-
+    //Peek surrounding tiles
     for (int row = -Parameters::GridWidth() - 2; row <= (int) Parameters::GridWidth() + 2; row += Parameters::GridWidth() + 2)
     {
         for (int column = -1; column <= 1; column++)
         {
-            cascade(index + row + column);
+            unsigned int surrounding_index = index + row + column;
+            TileDrawableSprite* tile = dynamic_cast<TileDrawableSprite*>(App::getInstance()->getEntityManager().getEntity(surrounding_index)->getDrawable());
+            if (tile->getState() == TileStateManager::Covered)
+            {
+                tile->setState(TileStateManager::Peek);
+            }
         }
     }
+}
 
+void GridBehavior::setSurroundingToCovered(unsigned int index)
+{
+    //set Peek state back to covered:
+    for (int row = -Parameters::GridWidth() - 2; row <= (int) Parameters::GridWidth() + 2; row += Parameters::GridWidth() + 2)
+    {
+        for (int column = -1; column <= 1; column++)
+        {
+            unsigned int surrounding_index = index + row + column;
+            TileDrawableSprite* tile = dynamic_cast<TileDrawableSprite*>(App::getInstance()->getEntityManager().getEntity(surrounding_index)->getDrawable());
+            if (tile->getState() == TileStateManager::Peek)
+            {
+                tile->setState(TileStateManager::Covered);
+            }
+        }
+    }
 }
 
 void GridBehavior::revealMines()
 {
     std::for_each(_mines.begin(), _mines.end(), MineRevealer());
+}
+
+bool GridBehavior::isOnEdge(unsigned int index)
+{
+    return  int (index / (Parameters::GridWidth() + 2)) == 0 and
+            int (index / (Parameters::GridWidth() + 2)) == Parameters::GridHeight() + 1 and
+            int (index + 1 % (Parameters::GridWidth() + 2)) == 0 and
+            int (index + 1 % (Parameters::GridWidth() + 2)) == Parameters::GridWidth() + 2;
 }

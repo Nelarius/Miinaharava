@@ -65,3 +65,9 @@ AppStateManager& App::getAppStateManager()
 {
     return _appStateManager;
 }
+
+void App::resize()
+{
+    _mainWindow.close();
+    _mainWindow.create(sf::VideoMode(Parameters::ScreenWidth(), Parameters::ScreenHeight(), 32), "Minesweeper", sf::Style::None);
+}

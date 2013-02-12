@@ -6,7 +6,7 @@
 #include <string>
 
 TileDrawableSprite::TileDrawableSprite() :  _coveredTexture(0), _uncoveredTexture(0), _mineTexture(0), _flagTexture(0), _qmarkTexture(0),
-                                            _colorLookUp(0), _adjacentCount(0), _hasMine(false), _showCount(false)
+                                            _colorLookUp(0), _adjacentCount(0), _hasMine(false), _stateManager(this), _showCount(false)
 {
     load();
 
@@ -123,4 +123,14 @@ void TileDrawableSprite::displayCount(int count)
 void TileDrawableSprite::hideCount()
 {
     _showCount = false;
+}
+
+int TileDrawableSprite::getCount() const
+{
+    return _adjacentCount;
+}
+
+void TileDrawableSprite::setState(int state)
+{
+    _stateManager.changeState(state);
 }

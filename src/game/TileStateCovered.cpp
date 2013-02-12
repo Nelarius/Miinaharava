@@ -14,6 +14,16 @@ TileStateCovered::~TileStateCovered()
     //dtor
 }
 
+void TileStateCovered::activate(TileDrawableSprite* tile)
+{
+    //
+}
+
+void TileStateCovered::deactivate(TileDrawableSprite* tile)
+{
+    //
+}
+
 //returns true if the tile has a mine
 bool TileStateCovered::leftClick(TileDrawableSprite* tile)
 {

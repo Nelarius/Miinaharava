@@ -1,4 +1,10 @@
 TileSize = 20
-GridWidth = 75
-GridHeight = 40
-MineCount = 350
+GridWidthEasy = 9
+GridHeightEasy = 9
+MineCountEasy = 10
+GridWidthMedium = 30
+GridHeightMedium = 20
+MineCountMedium = 50
+GridWidthHard = 65
+GridHeightHard = 40
+MineCountHard = 200

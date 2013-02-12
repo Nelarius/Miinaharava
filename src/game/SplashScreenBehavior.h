@@ -2,6 +2,7 @@
 #define SPLASHSCREENBEHAVIOR_H
 
 #include <engine/Behavior.h>
+#include <engine/stdincl.h>
 
 class SplashScreenBehavior : public Behavior
 {
@@ -10,6 +11,10 @@ class SplashScreenBehavior : public Behavior
         ~SplashScreenBehavior();
 
         void update();
+
+    private:
+        sf::Clock   _clock;
+        sf::Time    _start;
 };
 
 #endif // SPLASHSCREENBEHAVIOR_H

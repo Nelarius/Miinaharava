@@ -12,6 +12,16 @@ TileStateUncertain::~TileStateUncertain()
     //dtor
 }
 
+void TileStateUncertain::activate(TileDrawableSprite* tile)
+{
+    //
+}
+
+void TileStateUncertain::deactivate(TileDrawableSprite* tile)
+{
+    //
+}
+
 bool TileStateUncertain::leftClick(TileDrawableSprite* tile)
 {
     return false;

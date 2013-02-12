@@ -12,6 +12,16 @@ TileStateFlagged::~TileStateFlagged()
     //dtor
 }
 
+void TileStateFlagged::activate(TileDrawableSprite* tile)
+{
+    //
+}
+
+void TileStateFlagged::deactivate(TileDrawableSprite* tile)
+{
+    //
+}
+
 bool TileStateFlagged::leftClick(TileDrawableSprite* tile)
 {
     return false;

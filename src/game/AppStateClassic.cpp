@@ -31,4 +31,7 @@ void AppStateClassic::deactivate()
 {
     App::getInstance()->getEntityManager().removeAll();
     App::getInstance()->getWindow().setView(App::getInstance()->getWindow().getDefaultView());
+
+    //Reset grid info to medium so that the screen is the correct size:
+    Parameters::setDifficulty(Parameters::Medium);
 }

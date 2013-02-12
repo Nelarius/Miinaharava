@@ -52,10 +52,8 @@ src/game/GridEntity.cpp
 src/game/GridEntity.h
 src/game/MenuBehavior.cpp
 src/game/MenuBehavior.h
-src/game/MenuDrawable.cpp
-src/game/MenuDrawable.h
-src/game/MenuStateEntity.cpp
-src/game/MenuStateEntity.h
+src/game/MenuGUIBehavior.cpp
+src/game/MenuGUIEntity.cpp
 src/game/Parameters.h
 src/game/Parameters.cpp
 src/game/SplashScreenBehavior.cpp
@@ -64,6 +62,8 @@ src/game/SplashScreenDrawable.cpp
 src/game/SplashScreenDrawable.h
 src/game/SplashScreenEntity.cpp
 src/game/SplashScreenEntity.h
+src/game/TextRectangleEntity.cpp
+src/game/DrawableTextRectangle.cpp
 src/game/TileDrawableSprite.cpp
 src/game/TileDrawableSprite.h
 src/game/TileEntity.cpp

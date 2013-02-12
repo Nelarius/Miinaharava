@@ -9,6 +9,9 @@ class TileStateUncertain : public TileState
         TileStateUncertain(TileStateManager*);
         ~TileStateUncertain();
 
+        void activate(TileDrawableSprite* tile);
+        void deactivate(TileDrawableSprite* tile);
+
         bool leftClick(TileDrawableSprite*);
         bool rightClick(TileDrawableSprite*);
 

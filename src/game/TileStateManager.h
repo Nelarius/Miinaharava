@@ -12,7 +12,7 @@ class TileDrawableSprite;
 class TileStateManager
 {
     public:
-        TileStateManager();
+        TileStateManager(TileDrawableSprite* owner);
         ~TileStateManager();
 
         void changeState(int id);
@@ -33,7 +33,8 @@ class TileStateManager
         };
 
     private:
-        TileState* _currentState;
+        TileDrawableSprite* _owner;
+        TileState*          _currentState;
 
         TileStateCovered*   _covered;
         TileStateUncovered* _uncovered;

@@ -10,6 +10,9 @@ class TileState
         TileState(TileStateManager*);
         virtual ~TileState();
 
+        virtual void activate(TileDrawableSprite*) = 0;
+        virtual void deactivate(TileDrawableSprite*) = 0;
+
         virtual bool leftClick(TileDrawableSprite*) = 0;
         virtual bool rightClick(TileDrawableSprite*) = 0;
 
