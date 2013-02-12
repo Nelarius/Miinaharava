@@ -11,15 +11,21 @@ namespace sf
     class Event;
 }
 
+/// \brief The behavior of a minesweeper grid of any size.
 class GridBehavior : public Behavior
 {
     public:
         GridBehavior();
         ~GridBehavior();
 
+        /// \brief Inherited from Behavior.
         void update();
 
         //public for testing purposes
+        /// \brief Returns the array index of the tile located at (x, y), offset by one tile row in both directions.
+        /// \param x The x-coordinate.
+        /// \brief y The y-coordinate.
+        /// \return The array index.
         unsigned int getIndex(int x, int y);
         float getX(unsigned int index);
         float getY(unsigned int index);

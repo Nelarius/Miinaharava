@@ -89,16 +89,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">TileState Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A generic model for a tile state.  
+ <a href="class_tile_state.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_tile_state_8h_source.html">TileState.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TileState:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_tile_state.png" usemap="#TileState_map" alt=""/>
   <map id="TileState_map" name="TileState_map">
-<area href="class_tile_state_covered.html" alt="TileStateCovered" shape="rect" coords="0,56,122,80"/>
+<area href="class_tile_state_covered.html" title="The TileState corresponding to the covered state." alt="TileStateCovered" shape="rect" coords="0,56,122,80"/>
 <area href="class_tile_state_flagged.html" alt="TileStateFlagged" shape="rect" coords="132,56,254,80"/>
-<area href="class_tile_state_uncertain.html" alt="TileStateUncertain" shape="rect" coords="264,56,386,80"/>
-<area href="class_tile_state_uncovered.html" alt="TileStateUncovered" shape="rect" coords="396,56,518,80"/>
+<area href="class_tile_state_peek.html" title="This state corresponds to temporarily revealing the tile." alt="TileStatePeek" shape="rect" coords="264,56,386,80"/>
+<area href="class_tile_state_uncertain.html" title="This state corresponds displaying a question mark on the tile." alt="TileStateUncertain" shape="rect" coords="396,56,518,80"/>
+<area href="class_tile_state_uncovered.html" title="This TileState corresponds to showing the uncovered tile." alt="TileStateUncovered" shape="rect" coords="528,56,650,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -107,14 +113,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a36d171a85093a39ecc1deefd609fb467"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36d171a85093a39ecc1deefd609fb467"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>TileState</b> (<a class="el" href="class_tile_state_manager.html">TileStateManager</a> *)</td></tr>
 <tr class="separator:a36d171a85093a39ecc1deefd609fb467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25bd2bece8845eea4e9b2b4a4ee6409f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25bd2bece8845eea4e9b2b4a4ee6409f"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_state.html#a25bd2bece8845eea4e9b2b4a4ee6409f">activate</a> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *)=0</td></tr>
+<tr class="memdesc:a25bd2bece8845eea4e9b2b4a4ee6409f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This code is called whenever this state is activated. <br/></td></tr>
+<tr class="separator:a25bd2bece8845eea4e9b2b4a4ee6409f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac787b290324556ca88dfec0fc62d5b7a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac787b290324556ca88dfec0fc62d5b7a"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_state.html#ac787b290324556ca88dfec0fc62d5b7a">deactivate</a> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *)=0</td></tr>
+<tr class="memdesc:ac787b290324556ca88dfec0fc62d5b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This code is called whenever this state is deactivated. <br/></td></tr>
+<tr class="separator:ac787b290324556ca88dfec0fc62d5b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04ef140ccf0aecdfc37e7f8368f9e6d6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04ef140ccf0aecdfc37e7f8368f9e6d6"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>leftClick</b> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *)=0</td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_state.html#a04ef140ccf0aecdfc37e7f8368f9e6d6">leftClick</a> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *)=0</td></tr>
+<tr class="memdesc:a04ef140ccf0aecdfc37e7f8368f9e6d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a left click. <br/></td></tr>
 <tr class="separator:a04ef140ccf0aecdfc37e7f8368f9e6d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dadc3f217d5f9ce6ca41beafb458ee3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3dadc3f217d5f9ce6ca41beafb458ee3"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>rightClick</b> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *)=0</td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_state.html#a3dadc3f217d5f9ce6ca41beafb458ee3">rightClick</a> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *)=0</td></tr>
+<tr class="memdesc:a3dadc3f217d5f9ce6ca41beafb458ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a right click. <br/></td></tr>
 <tr class="separator:a3dadc3f217d5f9ce6ca41beafb458ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a685f85b7c0feece1ead6a2f1c0d8ef78"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a685f85b7c0feece1ead6a2f1c0d8ef78"></a>
-virtual const int&#160;</td><td class="memItemRight" valign="bottom"><b>getState</b> () const =0</td></tr>
+virtual const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_state.html#a685f85b7c0feece1ead6a2f1c0d8ef78">getState</a> () const =0</td></tr>
+<tr class="memdesc:a685f85b7c0feece1ead6a2f1c0d8ef78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the enumeration of this state as enumerated in <a class="el" href="class_tile_state_manager.html" title="A manager class for TileStates.">TileStateManager</a>. <br/></td></tr>
 <tr class="separator:a685f85b7c0feece1ead6a2f1c0d8ef78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -123,14 +140,16 @@ Protected Attributes</h2></td></tr>
 <a class="el" href="class_tile_state_manager.html">TileStateManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_owner</b></td></tr>
 <tr class="separator:a55aeae3550208b3cf25609d7e86bbb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A generic model for a tile state. </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/game/<a class="el" href="_tile_state_8h_source.html">TileState.h</a></li>
 <li>src/game/TileState.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 4 2013 16:36:56 for Miinaharava by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 12 2013 19:25:14 for Miinaharava by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

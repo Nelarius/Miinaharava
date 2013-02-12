@@ -3,6 +3,7 @@
 
 #include <game/TileState.h>
 
+/// \brief This state corresponds displaying a question mark on the tile.
 class TileStateUncertain : public TileState
 {
     public:

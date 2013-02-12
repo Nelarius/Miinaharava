@@ -4,7 +4,7 @@
 #include "engine/Drawable.h"
 #include <engine/stdincl.h>
 
-
+/// \brief subject to change.
 class SplashScreenDrawable : public Drawable
 {
     public:

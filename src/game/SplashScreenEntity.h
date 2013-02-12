@@ -3,7 +3,7 @@
 
 #include "engine/Entity.h"
 
-
+/// \brief The container class for SplashScreenBehavior and SplashScreenDrawable.
 class SplashScreenEntity : public Entity
 {
     public:

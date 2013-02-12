@@ -3,7 +3,7 @@
 
 #include <engine/Entity.h>
 
-
+/// \brief The container class for MenuGUIBehavior.
 class MenuGUIEntity : public Entity
 {
     public:

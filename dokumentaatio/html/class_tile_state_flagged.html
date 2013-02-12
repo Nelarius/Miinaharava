@@ -94,7 +94,7 @@ Inheritance diagram for TileStateFlagged:</div>
  <div class="center">
   <img src="class_tile_state_flagged.png" usemap="#TileStateFlagged_map" alt=""/>
   <map id="TileStateFlagged_map" name="TileStateFlagged_map">
-<area href="class_tile_state.html" alt="TileState" shape="rect" coords="0,0,106,24"/>
+<area href="class_tile_state.html" title="A generic model for a tile state." alt="TileState" shape="rect" coords="0,0,106,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -103,14 +103,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acfbf36cba8807002d804568578978c4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfbf36cba8807002d804568578978c4f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>TileStateFlagged</b> (<a class="el" href="class_tile_state_manager.html">TileStateManager</a> *)</td></tr>
 <tr class="separator:acfbf36cba8807002d804568578978c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d978713827cf91217de6147479c6bce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d978713827cf91217de6147479c6bce"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>leftClick</b> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *)</td></tr>
+<tr class="memitem:ade208f1ca5456c7f0a79e07117b9d4af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade208f1ca5456c7f0a79e07117b9d4af"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_state_flagged.html#ade208f1ca5456c7f0a79e07117b9d4af">activate</a> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *tile)</td></tr>
+<tr class="memdesc:ade208f1ca5456c7f0a79e07117b9d4af"><td class="mdescLeft">&#160;</td><td class="mdescRight">This code is called whenever this state is activated. <br/></td></tr>
+<tr class="separator:ade208f1ca5456c7f0a79e07117b9d4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac99478a4f87f745efb1fe71644bf740e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac99478a4f87f745efb1fe71644bf740e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_state_flagged.html#ac99478a4f87f745efb1fe71644bf740e">deactivate</a> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *tile)</td></tr>
+<tr class="memdesc:ac99478a4f87f745efb1fe71644bf740e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This code is called whenever this state is deactivated. <br/></td></tr>
+<tr class="separator:ac99478a4f87f745efb1fe71644bf740e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d978713827cf91217de6147479c6bce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_state_flagged.html#a9d978713827cf91217de6147479c6bce">leftClick</a> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *)</td></tr>
+<tr class="memdesc:a9d978713827cf91217de6147479c6bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a left click on a flagged mine.  <a href="#a9d978713827cf91217de6147479c6bce">More...</a><br/></td></tr>
 <tr class="separator:a9d978713827cf91217de6147479c6bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80acc9a5cb9c73daa8696fae5660ac30"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80acc9a5cb9c73daa8696fae5660ac30"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>rightClick</b> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *)</td></tr>
+<tr class="memitem:a80acc9a5cb9c73daa8696fae5660ac30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_state_flagged.html#a80acc9a5cb9c73daa8696fae5660ac30">rightClick</a> (<a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *)</td></tr>
+<tr class="memdesc:a80acc9a5cb9c73daa8696fae5660ac30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a right click on a flagged mine.  <a href="#a80acc9a5cb9c73daa8696fae5660ac30">More...</a><br/></td></tr>
 <tr class="separator:a80acc9a5cb9c73daa8696fae5660ac30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64a906daaa3cc4ab7b01b4565f995cb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64a906daaa3cc4ab7b01b4565f995cb4"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>getState</b> () const </td></tr>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_state_flagged.html#a64a906daaa3cc4ab7b01b4565f995cb4">getState</a> () const </td></tr>
+<tr class="memdesc:a64a906daaa3cc4ab7b01b4565f995cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the enumeration of this state as enumerated in <a class="el" href="class_tile_state_manager.html" title="A manager class for TileStates.">TileStateManager</a>. <br/></td></tr>
 <tr class="separator:a64a906daaa3cc4ab7b01b4565f995cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_tile_state"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_tile_state')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_tile_state.html">TileState</a></td></tr>
 <tr class="memitem:a36d171a85093a39ecc1deefd609fb467 inherit pub_methods_class_tile_state"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36d171a85093a39ecc1deefd609fb467"></a>
@@ -124,6 +133,67 @@ Additional Inherited Members</h2></td></tr>
 <a class="el" href="class_tile_state_manager.html">TileStateManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_owner</b></td></tr>
 <tr class="separator:a55aeae3550208b3cf25609d7e86bbb22 inherit pro_attribs_class_tile_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9d978713827cf91217de6147479c6bce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TileStateFlagged::leftClick </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *&#160;</td>
+          <td class="paramname"><em>tile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle a left click on a flagged mine. </p>
+<dl class="section return"><dt>Returns</dt><dd>Always false.</dd></dl>
+<p>Left clicking on a flagged mine does nothing, and thus this method has no result. </p>
+
+<p>Implements <a class="el" href="class_tile_state.html#a04ef140ccf0aecdfc37e7f8368f9e6d6">TileState</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a80acc9a5cb9c73daa8696fae5660ac30"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TileStateFlagged::rightClick </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tile_drawable_sprite.html">TileDrawableSprite</a> *&#160;</td>
+          <td class="paramname"><em>tile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle a right click on a flagged mine. </p>
+<dl class="section return"><dt>Returns</dt><dd>Always false.</dd></dl>
+<p>The result of this action is to switch to <a class="el" href="class_tile_state_uncertain.html" title="This state corresponds displaying a question mark on the tile.">TileStateUncertain</a>. </p>
+
+<p>Implements <a class="el" href="class_tile_state.html#a3dadc3f217d5f9ce6ca41beafb458ee3">TileState</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/game/<a class="el" href="_tile_state_flagged_8h_source.html">TileStateFlagged.h</a></li>
 <li>src/game/TileStateFlagged.cpp</li>
@@ -131,7 +201,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 4 2013 16:36:56 for Miinaharava by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 12 2013 19:25:15 for Miinaharava by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -91,25 +91,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;game/TileState.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="class_tile_state_uncertain.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tile_state_uncertain.html">TileStateUncertain</a> : <span class="keyword">public</span> <a class="code" href="class_tile_state.html">TileState</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="class_tile_state_uncertain.html">TileStateUncertain</a>(<a class="code" href="class_tile_state_manager.html">TileStateManager</a>*);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        ~<a class="code" href="class_tile_state_uncertain.html">TileStateUncertain</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordtype">bool</span> leftClick(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>*);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">bool</span> rightClick(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>*);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> getState() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif // TILESTATEUNCERTAIN_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="class_tile_state_uncertain.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tile_state_uncertain.html" title="This state corresponds displaying a question mark on the tile.">TileStateUncertain</a> : <span class="keyword">public</span> <a class="code" href="class_tile_state.html" title="A generic model for a tile state.">TileState</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="class_tile_state_uncertain.html" title="This state corresponds displaying a question mark on the tile.">TileStateUncertain</a>(<a class="code" href="class_tile_state_manager.html" title="A manager class for TileStates.">TileStateManager</a>*);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        ~<a class="code" href="class_tile_state_uncertain.html" title="This state corresponds displaying a question mark on the tile.">TileStateUncertain</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_tile_state_uncertain.html#a614c205fc5b3d6213f685973c4203242" title="This code is called whenever this state is activated.">activate</a>(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>* tile);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_tile_state_uncertain.html#a1e514784f8ea5d56c81492593e9f988e" title="This code is called whenever this state is deactivated.">deactivate</a>(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>* tile);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_tile_state_uncertain.html#a6f3fb810fbfb16ddb9ed98fd4b9cd49d" title="Handle a left click.">leftClick</a>(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>*);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_tile_state_uncertain.html#a0bf9cd4414adf244c79d0b1cbc18f156" title="Handle a right click.">rightClick</a>(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>*);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_tile_state_uncertain.html#af0089466e5a6a82cd5ccca4389bafd21" title="Return the enumeration of this state as enumerated in TileStateManager.">getState</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif // TILESTATEUNCERTAIN_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 4 2013 16:36:56 for Miinaharava by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 12 2013 19:25:07 for Miinaharava by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

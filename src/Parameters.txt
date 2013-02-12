@@ -7,4 +7,4 @@ GridHeightMedium = 20
 MineCountMedium = 50
 GridWidthHard = 65
 GridHeightHard = 40
-MineCountHard = 200
+MineCountHard = 300

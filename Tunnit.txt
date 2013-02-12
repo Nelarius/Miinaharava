@@ -61,3 +61,5 @@ Dokumentaatio - 1 tunti
 Suunnittelu - 15 minuuttia
 
 Toteutus - 3 tuntia
+
+Dokumentaatio - 2 tuntia

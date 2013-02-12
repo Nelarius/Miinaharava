@@ -3,7 +3,7 @@
 
 #include "engine/Entity.h"
 
-
+/// \brief A container class for TileDrawableSprite.
 class TileEntity : public Entity
 {
     public:

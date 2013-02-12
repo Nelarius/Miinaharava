@@ -5,6 +5,7 @@
 
 class TileStateManager;
 
+/// \brief This TileState corresponds to showing the uncovered tile.
 class TileStateUncovered : public TileState
 {
     public:

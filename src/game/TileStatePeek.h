@@ -3,7 +3,7 @@
 
 #include <game/TileState.h>
 
-
+/// \brief This state corresponds to temporarily revealing the tile.
 class TileStatePeek : public TileState
 {
     public:
@@ -13,7 +13,10 @@ class TileStatePeek : public TileState
         void activate(TileDrawableSprite* tile);
         void deactivate(TileDrawableSprite* tile);
 
+        /// \brief This method has no action.
         bool leftClick(TileDrawableSprite*);
+
+        /// \brief This method has no action.
         bool rightClick(TileDrawableSprite*);
 
         const int getState() const;

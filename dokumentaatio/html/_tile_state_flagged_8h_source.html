@@ -91,25 +91,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;game/TileState.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="class_tile_state_flagged.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tile_state_flagged.html">TileStateFlagged</a> : <span class="keyword">public</span> <a class="code" href="class_tile_state.html">TileState</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="class_tile_state_flagged.html">TileStateFlagged</a>(<a class="code" href="class_tile_state_manager.html">TileStateManager</a>*);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        ~<a class="code" href="class_tile_state_flagged.html">TileStateFlagged</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordtype">bool</span> leftClick(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>*);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">bool</span> rightClick(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>*);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> getState() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif // TILESTATEFLAGGED_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="class_tile_state_flagged.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tile_state_flagged.html">TileStateFlagged</a> : <span class="keyword">public</span> <a class="code" href="class_tile_state.html" title="A generic model for a tile state.">TileState</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="class_tile_state_flagged.html">TileStateFlagged</a>(<a class="code" href="class_tile_state_manager.html" title="A manager class for TileStates.">TileStateManager</a>*);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        ~<a class="code" href="class_tile_state_flagged.html">TileStateFlagged</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_tile_state_flagged.html#ade208f1ca5456c7f0a79e07117b9d4af" title="This code is called whenever this state is activated.">activate</a>(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>* tile);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_tile_state_flagged.html#ac99478a4f87f745efb1fe71644bf740e" title="This code is called whenever this state is deactivated.">deactivate</a>(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>* tile);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_tile_state_flagged.html#a9d978713827cf91217de6147479c6bce" title="Handle a left click on a flagged mine.">leftClick</a>(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>*);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_tile_state_flagged.html#a80acc9a5cb9c73daa8696fae5660ac30" title="Handle a right click on a flagged mine.">rightClick</a>(<a class="code" href="class_tile_drawable_sprite.html">TileDrawableSprite</a>*);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_tile_state_flagged.html#a64a906daaa3cc4ab7b01b4565f995cb4" title="Return the enumeration of this state as enumerated in TileStateManager.">getState</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif // TILESTATEFLAGGED_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 4 2013 16:36:56 for Miinaharava by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 12 2013 19:25:07 for Miinaharava by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

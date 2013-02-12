@@ -7,7 +7,10 @@ namespace sf
     class Event;
 }
 
-
+/// \brief The Behavior class for the GUI.
+///
+/// This class intantiates two TextRectangleEntities, and instantiates three
+/// TextRectangleEntities dynamically.
 class MenuGUIBehavior : public Behavior
 {
     public:

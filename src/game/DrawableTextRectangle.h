@@ -4,10 +4,14 @@
 #include <engine/Drawable.h>
 #include <string>
 
-
+/// \brief An invisible rectangle containing text.
+///
+/// This class is intended to be used as the text buttons in a GUI.
 class DrawableTextRectangle : public Drawable
 {
     public:
+        /// \brief Construct the button with the text to be displayed.
+        /// \param text The string to be displayed.
         DrawableTextRectangle(const std::string text);
         ~DrawableTextRectangle();
 
