@@ -35,7 +35,6 @@ src/game/AppStateMenu.cpp
 src/game/AppStateSplashScreen.cpp
 src/game/GridBehavior.cpp
 src/game/GridEntity.cpp
-src/game/MenuBehavior.cpp
 src/game/MenuGUIBehavior.cpp
 src/game/MenuGUIEntity.cpp
 src/game/Parameters.cpp
@@ -74,7 +73,7 @@ add_executable(${EXECUTABLE_NAME} ${sourceFiles})
 set(SFML_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/sfml/include" ${SFML_INCLUDE_DIR})
 
 #Set compiler flags
-set(CMAKE_CXX_FLAGS "-std=c++0x")
+set(CMAKE_CXX_FLAGS "-std=c++0x -g")
 
 #linhk to UnitTest++
 target_link_libraries(${EXECUTABLE_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/sfml/lib/libUnitTest++.a")
