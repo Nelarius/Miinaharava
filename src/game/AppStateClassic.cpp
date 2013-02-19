@@ -32,4 +32,5 @@ void AppStateClassic::deactivate()
 
     //Reset grid info to medium so that the screen is the correct size:
     Parameters::setDifficulty(Parameters::Medium);
+    App::getInstance()->resize();
 }

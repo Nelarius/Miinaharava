@@ -12,7 +12,8 @@
 
 #include <iostream>
 
-GridBehavior::GridBehavior() : _score(0), _firstClick(true), _bothMouseButtonsWereDown(false), _mousePressedDownAt(0)
+GridBehavior::GridBehavior() : _score(0), _firstClick(true), _bothMouseButtonsWereDown(false), _mousePressedDownAt(0),
+                               _freezeScreen(false)
 {
     EntityManager& entityManager = App::getInstance()->getEntityManager();
 
@@ -42,6 +43,18 @@ GridBehavior::~GridBehavior()
 
 void GridBehavior::update()
 {
+    //Handle screen freee in case mine is hit:
+    sf::Time time = _clock.getElapsedTime();
+    if (_freezeScreen)
+    {
+        if (time > _start + sf::seconds(1.0))
+        {
+            App::getInstance()->getAppStateManager().setActiveAppState(AppState::Menu);
+        }
+        return;
+    }
+
+    //Handle events:
     sf::Event event;
     while (App::getInstance()->getWindow().pollEvent(event))
     {
@@ -93,7 +106,8 @@ void GridBehavior::cascade(unsigned int index)
 
     if (tile->leftClick())
     {
-        revealMines();
+        handleMineHit();
+        return;
     }
 
     if (count != 0)
@@ -212,7 +226,7 @@ void GridBehavior::handleLeftClick(sf::Event& event)
     TileDrawableSprite* tile = dynamic_cast<TileDrawableSprite*>(App::getInstance()->getEntityManager().getEntity(index)->getDrawable());
     if (tile->leftClick())
     {
-        revealMines();
+        handleMineHit();
     }
 
     cascade(index);
@@ -222,7 +236,17 @@ void GridBehavior::handleRightClick(sf::Event& event)
 {
     int index = getIndex(event.mouseButton.x, event.mouseButton.y);
     TileDrawableSprite* tile = dynamic_cast<TileDrawableSprite*>(App::getInstance()->getEntityManager().getEntity(index)->getDrawable());
-    tile->rightClick();
+
+    if (tile->rightClick())
+    {
+        _score++;
+    }
+
+    if (_score == _mines.size())
+    {
+        _start = _clock.getElapsedTime();
+        _freezeScreen = true;
+    }
 }
 
 void GridBehavior::handleBothMouseButtonsPressedDown(sf::Event& event)
@@ -292,10 +316,18 @@ void GridBehavior::revealMines()
     std::for_each(_mines.begin(), _mines.end(), MineRevealer());
 }
 
-bool GridBehavior::isOnEdge(unsigned int index)
+bool GridBehavior::isOnEdge(unsigned int index) const
 {
-    return  int (index / (Parameters::GridWidth() + 2)) == 0 and
-            int (index / (Parameters::GridWidth() + 2)) == Parameters::GridHeight() + 1 and
-            int (index + 1 % (Parameters::GridWidth() + 2)) == 0 and
-            int (index + 1 % (Parameters::GridWidth() + 2)) == Parameters::GridWidth() + 2;
+    return  int (index / (Parameters::GridWidth() + 2)) == 0 or
+            int (index / (Parameters::GridWidth() + 2)) == Parameters::GridHeight() + 1 or
+            int (index + 1 % (Parameters::GridWidth() + 1)) == 0 or
+            int (index + 1 % (Parameters::GridWidth() + 2)) == Parameters::GridWidth() + 1;
+}
+
+void GridBehavior::handleMineHit()
+{
+    revealMines();
+    //start countdown timer:
+    _start = _clock.getElapsedTime();
+    _freezeScreen = true;
 }

@@ -55,15 +55,21 @@ class GridBehavior : public Behavior
         void setSurroundingToPeek(unsigned int index);
         void setSurroundingToCovered(unsigned int index);
 
-        bool isOnEdge(unsigned int index);  //THIS DOESN'T WORK
+        bool isOnEdge(unsigned int index) const;  //THIS DOESN'T WORK
+
+        void handleMineHit();
 
         //attributes:
         int _score;
         bool _firstClick;
         bool _bothMouseButtonsWereDown;
         unsigned int _mousePressedDownAt;
+        bool _freezeScreen;
 
         std::set<int> _mines;   //stores references to placed mine indices
+
+        sf::Clock _clock;
+        sf::Time _start;
 };
 
 #endif // GRIDBEHAVIOR_H

@@ -4,7 +4,7 @@ project(Miinaharava)
 
 # Enable debug symbols by default
 if(CMAKE_BUILD_TYPE STREQUAL "")
-  set(CMAKE_BUILD_TYPE Debug)
+  set(CMAKE_BUILD_TYPE Release)
 endif()
 # (you can also set it on the command line: -D CMAKE_BUILD_TYPE=Release)
 
@@ -73,7 +73,7 @@ add_executable(${EXECUTABLE_NAME} ${sourceFiles})
 set(SFML_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/sfml/include" ${SFML_INCLUDE_DIR})
 
 #Set compiler flags
-set(CMAKE_CXX_FLAGS "-std=c++0x -g")
+set(CMAKE_CXX_FLAGS "-std=c++0x")
 
 #linhk to UnitTest++
 target_link_libraries(${EXECUTABLE_NAME} "${CMAKE_CURRENT_SOURCE_DIR}/sfml/lib/libUnitTest++.a")

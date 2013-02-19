@@ -43,7 +43,7 @@ bool TileStateCovered::rightClick(TileDrawableSprite* tile)
 {
     _owner->changeState(TileStateManager::Flagged);
     tile->setActiveSprite(TileStateManager::Flagged);
-    return false;
+    return tile->hasMine() ? true : false;
 }
 
 const int TileStateCovered::getState() const
