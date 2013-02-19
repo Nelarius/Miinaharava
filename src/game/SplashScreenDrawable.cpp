@@ -4,7 +4,7 @@
 
 SplashScreenDrawable::SplashScreenDrawable()
 {
-    _text = sf::Text("Splashscreen");
+    _text = sf::Text("Minesweeper");
 
     sf::Font font;
     if (font.loadFromFile("fonts/data-latin.ttf"))
@@ -15,9 +15,9 @@ SplashScreenDrawable::SplashScreenDrawable()
         #endif // DEBUG
     }
 
-    _text.setCharacterSize(20);
+    _text.setCharacterSize(30);
     _text.setColor(sf::Color::Red);
-    _text.setPosition(30.0,30.0);
+    _text.setPosition(60.0,30.0);
 }
 
 SplashScreenDrawable::~SplashScreenDrawable()

@@ -41,6 +41,7 @@ src/game/Parameters.cpp
 src/game/SplashScreenBehavior.cpp
 src/game/SplashScreenDrawable.cpp
 src/game/SplashScreenEntity.cpp
+src/game/SplashScreenSpriteEntity.cpp
 src/game/TextRectangleEntity.cpp
 src/game/DrawableTextRectangle.cpp
 src/game/TileDrawableSprite.cpp

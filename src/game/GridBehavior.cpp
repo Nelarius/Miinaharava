@@ -47,7 +47,7 @@ void GridBehavior::update()
     sf::Time time = _clock.getElapsedTime();
     if (_freezeScreen)
     {
-        if (time > _start + sf::seconds(1.0))
+        if (time > _start + sf::seconds(2.0))
         {
             App::getInstance()->getAppStateManager().setActiveAppState(AppState::Menu);
         }
@@ -242,7 +242,7 @@ void GridBehavior::handleRightClick(sf::Event& event)
         _score++;
     }
 
-    if (_score == _mines.size())
+    if (_score == (int) _mines.size())
     {
         _start = _clock.getElapsedTime();
         _freezeScreen = true;

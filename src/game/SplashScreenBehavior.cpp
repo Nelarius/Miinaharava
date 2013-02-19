@@ -19,7 +19,7 @@ void SplashScreenBehavior::update()
     sf::Time time = _clock.getElapsedTime();
 
     //wait two seconds
-    if (time < _start + sf::seconds(0.9))
+    if (time < _start + sf::seconds(1.5))
     {
         return;
     }
