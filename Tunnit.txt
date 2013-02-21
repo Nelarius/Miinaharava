@@ -63,3 +63,7 @@ Suunnittelu - 15 minuuttia
 Toteutus - 3 tuntia
 
 Dokumentaatio - 2 tuntia
+
+21.2.2013
+--------------------------------------------------------------
+Toteutus - 2 tuntia

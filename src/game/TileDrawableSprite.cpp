@@ -21,6 +21,8 @@ TileDrawableSprite::TileDrawableSprite() :  _coveredTexture(0), _uncoveredTextur
     _colorLookUp[6] = sf::Color(0, 197, 205, 255);
     _colorLookUp[7] = sf::Color::Black;
     _colorLookUp[8] = sf::Color(189, 189, 189, 255);
+
+    //_font.loadFromFile("fonts/data-latin.ttf");
 }
 
 TileDrawableSprite::~TileDrawableSprite()
@@ -56,6 +58,8 @@ void TileDrawableSprite::draw(sf::RenderWindow& window)
         {
             //Retarded implementation, doesn't work any other way :S
             sf::Text text = sf::Text(std::to_string(_adjacentCount));
+            //set up text font:
+            //text.setFont(_font);
             text.setCharacterSize(15);
             text.setPosition(getSprite().getPosition().x + 5.0, getSprite().getPosition().y);
             text.setColor(_colorLookUp[_adjacentCount]);

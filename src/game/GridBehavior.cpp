@@ -5,6 +5,8 @@
 
 #include <game/TileEntity.h>
 #include <game/TileDrawableSprite.h>
+#include <game/WinEntity.h>
+#include <game/WinDrawable.h>
 #include <game/Parameters.h>
 #include <utilities/LinGen.h>
 #include <ctime>
@@ -34,6 +36,9 @@ GridBehavior::GridBehavior() : _score(0), _firstClick(true), _bothMouseButtonsWe
         TileDrawableSprite* tileSprite = dynamic_cast<TileDrawableSprite*>(tile->getDrawable());
         tileSprite->leftClick();
     }
+
+    //start the elaps timer:
+    _gameStart = _clock.getElapsedTime();
 }
 
 GridBehavior::~GridBehavior()
@@ -47,7 +52,7 @@ void GridBehavior::update()
     sf::Time time = _clock.getElapsedTime();
     if (_freezeScreen)
     {
-        if (time > _start + sf::seconds(2.0))
+        if (time > _start + sf::seconds(2.5))
         {
             App::getInstance()->getAppStateManager().setActiveAppState(AppState::Menu);
         }
@@ -60,7 +65,7 @@ void GridBehavior::update()
     {
         if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape))
         {
-            App::getInstance()->getWindow().close();
+            App::getInstance()->getAppStateManager().setActiveAppState(AppState::Menu);
         }
 
         if (event.type == sf::Event::MouseButtonReleased and _bothMouseButtonsWereDown)
@@ -101,6 +106,15 @@ void GridBehavior::update()
 
 void GridBehavior::cascade(unsigned int index)
 {
+    //check if method is on edge:
+    if (isOnEdge(index))
+    {
+        //#ifdef DEBUG
+        std::cout << "Detected edge" << std::endl;
+        //#endif
+        return;
+    }
+
     int count = getAdjacentMines(index);
     TileDrawableSprite* tile = dynamic_cast<TileDrawableSprite*>(App::getInstance()->getEntityManager().getEntity(index)->getDrawable());
 
@@ -132,11 +146,6 @@ void GridBehavior::cascade(unsigned int index)
 int GridBehavior::getAdjacentMines(unsigned int index)
 {
     int count = 0;
-    if (isOnEdge(index))
-    {
-        std::cout << "Detected edge" << std::endl;
-        return count;
-    }
 
     for (int row = -Parameters::GridWidth() - 2; row <= (int) Parameters::GridWidth() + 2; row += Parameters::GridWidth() + 2)
     {
@@ -155,11 +164,6 @@ int GridBehavior::getAdjacentMines(unsigned int index)
 int GridBehavior::getAdjacentFlags(unsigned int index)
 {
     int count = 0;
-    if (isOnEdge(index))
-    {
-        std::cout << "Detected edge" << std::endl;
-        return count;
-    }
 
     for (int row = -Parameters::GridWidth() - 2; row <= (int) Parameters::GridWidth() + 2; row += Parameters::GridWidth() + 2)
     {
@@ -244,8 +248,7 @@ void GridBehavior::handleRightClick(sf::Event& event)
 
     if (_score == (int) _mines.size())
     {
-        _start = _clock.getElapsedTime();
-        _freezeScreen = true;
+        handleWin();
     }
 }
 
@@ -329,5 +332,22 @@ void GridBehavior::handleMineHit()
     revealMines();
     //start countdown timer:
     _start = _clock.getElapsedTime();
+
+    _freezeScreen = true;
+}
+
+void GridBehavior::handleWin()
+{
+    _start = _clock.getElapsedTime();
+
+    sf::Time elapsed = _clock.getElapsedTime() - _gameStart;
+
+    WinEntity* winE = new WinEntity();
+    WinDrawable* winD = dynamic_cast<WinDrawable*>(winE->getDrawable());
+    winD->setText(elapsed);
+
+    unsigned int highest = App::getInstance()->getEntityManager().getHighestAvailableIdent();
+    App::getInstance()->getEntityManager().add(highest, winE);
+
     _freezeScreen = true;
 }

@@ -58,6 +58,7 @@ class GridBehavior : public Behavior
         bool isOnEdge(unsigned int index) const;  //THIS DOESN'T WORK
 
         void handleMineHit();
+        void handleWin();
 
         //attributes:
         int _score;
@@ -70,6 +71,7 @@ class GridBehavior : public Behavior
 
         sf::Clock _clock;
         sf::Time _start;
+        sf::Time _gameStart;
 };
 
 #endif // GRIDBEHAVIOR_H

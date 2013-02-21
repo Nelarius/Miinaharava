@@ -53,6 +53,8 @@ src/game/TileStateFlagged.cpp
 src/game/TileStatePeek.cpp
 src/game/TileStateManager.cpp
 src/game/TileStateUncertain.cpp
+src/game/WinDrawable.cpp
+src/game/WinEntity.cpp
 src/utilities/LinGen.cpp
 src/unitTests/AppStateManagerTest.cpp
 src/unitTests/EntityManagerTest.cpp

@@ -72,6 +72,8 @@ class TileDrawableSprite : public DrawableSprite
         sf::Texture* _flagTexture;
         sf::Texture* _qmarkTexture;
 
+        sf::Font _font;
+
         sf::Color*   _colorLookUp;
 
         int          _adjacentCount;

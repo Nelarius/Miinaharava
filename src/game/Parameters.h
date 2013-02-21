@@ -40,12 +40,16 @@ class Parameters
             Hard
         };
 
+        static int getDifficulty();
+
     private:
         static float _values[10];
 
         static float _currentGridWidth;
         static float _currentGridHeight;
         static float _currentMineCount;
+
+        static int  _currentDifficulty;
 };
 
 #endif // PARAMETERS_H_INCLUDED
