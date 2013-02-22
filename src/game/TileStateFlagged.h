@@ -3,7 +3,7 @@
 
 #include <game/TileState.h>
 
-/// \brief
+/// \brief The Flagged state.
 class TileStateFlagged : public TileState
 {
     public:

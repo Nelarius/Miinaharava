@@ -3,6 +3,7 @@ var searchData=
   ['getappstatemanager',['getAppStateManager',['../class_app.html#ac68d1bcb9c6db9bf0d644f8d5d327a4a',1,'App']]],
   ['getbehavior',['getBehavior',['../class_entity.html#a46881fdd65044cbb1e028396acff4248',1,'Entity']]],
   ['getcount',['getCount',['../class_tile_drawable_sprite.html#a4dca6d0cacdc5a7f1c7fee87a1809289',1,'TileDrawableSprite']]],
+  ['getdifficulty',['getDifficulty',['../class_parameters.html#a29690d324ae3ed801922f9f91d88ba4c',1,'Parameters']]],
   ['getdrawable',['getDrawable',['../class_entity.html#ac071274768b9a03e1c762d16c609a0e6',1,'Entity']]],
   ['getentity',['getEntity',['../class_entity_manager.html#a8126c6eb06b4ee2341a71092ab164616',1,'EntityManager']]],
   ['getentitymanager',['getEntityManager',['../class_app.html#a1d7f346adb06d94d0a12f8b0bc493c15',1,'App']]],

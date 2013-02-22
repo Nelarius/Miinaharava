@@ -1,13 +1,13 @@
---------------------------------------------------------------
+﻿--------------------------------------------------------------
 
 Aihe: Miinaharava
 
 Toteutetaan klooni klassisesta miinaharava - pelistä.
 
-Peliss� pelaajan t�ytyy paljastaa ruutuja, jotka eiv�t sis�ll� miinoja. 
-Klikkaamalla paljastamatonta ruutua jonka naapurissa ei ole miinaa, peli paljastaa kaikki ruudut joiden naapurissa ei my�sk��n ole miinaa. 
-Paljastettujen ruutujen vieress� on naapurissa olevien miinojen lukum��r�. Paljastamattomat ruudut voi merkit� lipulla jos pelaaja ep�ilee, ett� siell� on miina. 
-Peli on voitettu kun kaikki miinat on merkitty lipulla.
+Pelissä pelaajan täytyy paljastaa ruutuja, jotka eivät sisällä miinoja. Klikkaamalla paljastamatonta ruutua jonka naapurissa ei ole miinaa, peli paljastaa kaikki ruudut joiden naapurissa ei myöskään ole miinaa.
+Paljastetuissa ruuduissa, jotka ovat paljastamattomien naapurissa, on näkyvissä numero, joka kertoo naapurissa olevien miinojen määrän. Paljastamattomat ruudut voi merkitä lipulla, jos pelaaja epäilee, että siellä sijaitsee miina. Paljastamattomaan ruutuun voi myös sijoittaa kysymysmerkki, jos pelaaja palaa ruutuun myöhemmin.
+
+Peli on voitettu kun kaikki miinan sisältämät ruudut on merkitty lipulla.
 
 --------------------------------------------------------------
 
@@ -17,9 +17,11 @@ Käyttäjät: pelaaja
 
 Pelaajan toiminnot:
 
--pelimoodin valitseminen
--vaikeustason valitseminen
--poistuminen
+-pelin vaikeustason valitseminen päävalikosta
+-poistuminen päävalikosta "Close"-nappia painamalla
+-poistuminen päävalikosta "Esc"-näppäintä painamalla
+-Pelissä oikealla klikkaaminen
+-Pelissä vasemmalla klikkaaminen
 
 --------------------------------------------------------------
 
@@ -32,7 +34,5 @@ Oikealla klikkaamalla voi merkitä paljastamattoman ruudun lipulla. Jos ruudussa
 Klikkaamalla oikealla uudelleen voi merkitä ruudun kysymysmerkillä.
 
 Jos painaa molemmat hiiren napit pohjaan paljastetun ruudun päällä, peli paljastaa kaikki vieressä olevat ruudut, jos
-lippuja on merkitty saman verran kuin paljastettu ruutu näyttää. Jos yksi lipuista on merkitty väärin, paljastuu miina ja 
-peli päättyy.
-
+lippuja on merkitty saman verran kuin paljastettu ruutu näyttää. Huomaa, että näin käy siitä huolimatta ovatko liput oikean ruudun päällä. Jos lippuja on oikea määrä, mutta väärien ruutujen päällä, paljastaa peli merkitsemättömät ruudut ja samalla paljastuu miina. Peli päättyy.
 --------------------------------------------------------------

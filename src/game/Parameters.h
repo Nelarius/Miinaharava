@@ -40,6 +40,8 @@ class Parameters
             Hard
         };
 
+        /// \brief Returns the current difficulty level that the class is using.
+        /// \return The integer corresponding to the difficulty level enumeration.
         static int getDifficulty();
 
     private:

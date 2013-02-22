@@ -67,3 +67,9 @@ Dokumentaatio - 2 tuntia
 21.2.2013
 --------------------------------------------------------------
 Toteutus - 2 tuntia
+
+22.2.2013
+--------------------------------------------------------------
+Dokumentaatio - ½ tuntia
+aihemäärittely & käyttöohjeet  - 15 min
+Ohjelman rakenne - ½ tuntia.

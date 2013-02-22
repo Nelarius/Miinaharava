@@ -1,0 +1,8 @@
+Ohjelman toiminta
+-----------------
+
+Pelin k‰ynnistytty‰, n‰kyy alkukuva 2 sekunnin ajan. Peli siirtyy alkukuvasta automaattisesti p‰‰valikkoon.
+
+P‰‰valikossa n‰kyy kaksi nappia : "Play" ja "Close". "Play" - nappia painamalla avautuu kolme uutta nappia: "Easy", "Medium" ja "Hard". N‰it‰ kolmea painamalla p‰‰st‰‰n pelaamaan. Easy-tasolla peliss‰ on 9x9 ruutua ja 10 miinaa. Medium-tasolla peliss‰ on 30x20 ruutua ja 50 miinaa. Hard-tasolla peliss‰ on 65x40 ruutua ja 300 miinaa.
+
+Pelin voittaa kun kaikki miinat on merkitty lipulla. Pelin h‰vi‰‰ kun paljastaa ruudun, joka sis‰lt‰‰ miinan. 
